@@ -1,4 +1,3 @@
-
 \documentclass[12pt]{gatechthesis}
 
 % preamble
@@ -16,6 +15,10 @@
 \lstset{framextopmargin=50pt}
 
 \usepackage{framed}
+
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{-2}
+\usepackage{easy-todo}
+
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -71,6 +74,7 @@
 \end{frontmatter}
 
 \begin{thesisbody}
+	\input{chapters/chapter0}
     \input{chapters/chapter1}
     \input{chapters/chapter2}
     \input{chapters/chapter3}

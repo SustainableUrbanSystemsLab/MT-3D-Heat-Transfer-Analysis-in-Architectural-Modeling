@@ -1,10 +1,13 @@
 
 \chapter{3D Heat Transfer Methodology}
+\todo{reiterate why 3D simulations might be advantageous}
 
-
-The methodology of the simulation begins with the validation case retrieved from \cite{ISO} is a 3D geometry consisting of the first and second floors separated by the floor slab and the plaster floor, the walls are aerated concrete, insulation, and brick. 
+The methodology of the simulation begins with the validation case retrieved from \cite{ISO} is a 3D geometry consisting of the first and second floors separated by the floor slab and the plaster floor, the walls are aerated concrete, insulation, and brick. \todo{sentence doesn't sound right}
 Below is a description of each component in the design software section and the roles of each software used \ref{fig:validation-case-materials} \textbf{(a)}.
+\todo{below where?}
 
+
+\todo{this transition makes no sense}
 Then, we use Rhinoceros to create, export, and import geometries to create the mesh. 
 \textit{Rhinoceros} will be used as a user interface to model the geometry and connect it to Grasshopper to calculate 3D heat transfer.
 Grasshopper (GH) is a visual programming environment that we use to automate the OF simulation. Automation can find the coordinates of the points in the region to set the mesh, boundary conditions, and material properties. 
@@ -12,10 +15,10 @@ In addition, we use \textit{OpenFOAM}, which is an open source computational flu
 
 
    
-\begin{figure}[htb]
+\begin{figure}[H]
      \centering
-    \includegraphics[trim=2.7cm 1.7cm 2.7cm 1.5cm, clip, width=0.8\linewidth]{Figures/flowchartv.pdf}
-     \caption[Simulation Flowchart]{Flowchart of simulation steps starting from pre-processing to the post-processing of the simulation}
+    \includegraphics[trim=2.7cm 1.7cm 2.7cm 1.5cm, clip, width=0.7\linewidth]{Figures/flowchartv.pdf}
+     \caption[Simulation Flowchart]{Flowchart of simulation steps starting from pre-processing to the post-processing of the simulation.}
    \label{fig:flowchart}
  \end{figure}
 
@@ -28,7 +31,7 @@ Beyond \textit{ISO 10211:2007}, it is also documented in the \textit{QuickField}
    
 
 
-\begin{figure}[tbh]
+\begin{figure}[H]
     \centering
     \begin{minipage}[t]{0.54\columnwidth}
         \centering
@@ -58,7 +61,7 @@ Beyond \textit{ISO 10211:2007}, it is also documented in the \textit{QuickField}
 
 
 
-\begin{figure}[tbh]
+\begin{figure}[htb]
     \centering
     \begin{minipage}[t]{0.75\columnwidth}
         \centering
@@ -90,13 +93,13 @@ Beyond \textit{ISO 10211:2007}, it is also documented in the \textit{QuickField}
 
 
 \section{Pre-processing}
-The pre-processing phase consists of dividing the geometry into different zones based on different materials and locations. In addition, thermophysical properties, such as specific heat capacity and thermal conductivity, are assigned to materials, and fluid or solid properties are assigned to regions. Limit conditions and construction materials are specified in \ref{fig:validation-case-materials} \textbf{(a)} and \textbf{(b)}. 
+The pre-processing phase consists of dividing the geometry into different zones based on different materials and locations. In addition, thermophysical properties, such as specific heat capacity and thermal conductivity, are assigned to materials, and fluid or solid properties are assigned to regions. Limit conditions and construction materials are specified in \cref{fig:validation-case-materials} \textbf{(a)} and \textbf{(b)}. 
 
 
 
 
 
-\begin{table}[tbh]
+\begin{table}[htb]
     \centering
     \label{tab:construction_material_properties}
     \caption[3D Material Properties]{Construction material properties and boundary conditions used for the simulation domain. Data were taken from the demo example in \textit{QuickField}.}
@@ -117,7 +120,7 @@ The pre-processing phase consists of dividing the geometry into different zones 
 \end{table}
 
 
-    \begin{table}[tbh]
+    \begin{table}[htb]
    
       \caption{3D Boundary Conditions}
       \centering
@@ -150,6 +153,7 @@ The validation case was constructed in \textit{OpenFOAM} by creating the mesh an
     \includegraphics[trim=1cm 11cm 1cm 3cm, clip, width=0.9\linewidth]{Figures/snappyhex.pdf}
      \caption[Mesh Creation Steps]{Visualization of the steps and executables to create the mesh step-by-step}
    \label{meshsteps}
+   \todo{nice figure, but I am not sure it shows what is happening. Aren't we cutting the cells outside of the geometry, leaving the inside? This is the opposite of what Eddy3D does.}
  \end{figure}
 
 
@@ -159,7 +163,7 @@ The validation case was constructed in \textit{OpenFOAM} by creating the mesh an
 \subsection{Solver Setup}
 The solver used in this case is \textit{chtMultiRegionFoam} in OpenFOAM 2306 which is a solver capable of solving for steady or transient fluid flow with solid heat conduction and conjugate heat transfer between regions, buoyancy effects, turbulence, reactions, and radiation modeling\footnote{Not used in this study.} \cite{cht}.
 There are three solvers capable of simulating steady-state heat transfer between fluids and solids which are \textit{chtMultiRegionFoam}, \textit{chtMultiRegionSimpleFoam}, and \textit{chtMultiRegionTwoPhaseEulerFoam}, but, the main difference is that the selected solver for this case is capable of doing both steady and transient states to have a more sufficient software. 
-
+\todo{more sufficient software?}
 
 To precisely mimic real-world situations, The use of \textit{chtMultiRegionFoam} solver is essential to have accurate 3D heat transfer results due to the availability of using fluid and solid. \ref{interface} visualizes the capabilities of the solver with the various domains and interfaces of different temperatures, solids, and fluids. 
 A description of the boundary conditions can be found in \cref{{tab:construction_material_properties}}. 
@@ -198,6 +202,7 @@ The thermophysical properties located in each zone and the constant file require
 The fvOptions text file allows the user to further manipulate the systems of equations, such as sources and skins. 
 
 \subsection{Solver Equations}    
+\todo{are these the equations that CHT is based on? If yes, then say so.}
 This section presents the implementation of heat transfer equations and metrics into OpenFOAM and the solver from OpenFOAM Foundations\cite{OpenFOAMFoundation}
 \subsubsection{Fluid Equations}
 
@@ -209,7 +214,7 @@ This section presents the implementation of heat transfer equations and metrics 
       Momentum Conservation Equation is \begin{equation}
 \frac{\partial (\rho u_i)}{\partial t} + \frac{\partial}{\partial x_j} \left( \rho u_{rj} u_i \right)  + \rho\epsilon_{ijk}\omega_i u_j = - \frac{\partial p_{rgh}}{\partial x_i} - \frac{\partial \rho g_j x_j}{\partial x_i}  + \frac{\partial}{\partial x_j} \left( \tau_{ij} + \tau_{t_{ij}} \right)
 \end{equation}
-
+\todo{you already have a similar for of the NS equation above in the turbulence section}
 
 
 \subsubsection{Solid Equations}
@@ -231,7 +236,7 @@ where \( \kappa_f \) thermal conductivity of the fluid and \( \kappa_s \)  the t
 
 
 \subsection{Constructing The Case}    
-An OF steady state heat transfer case requires three main folders to run which are iteration 0, constant, and system folders. Each folder is responsible for properties or boundary conditions and includes these conditions in each zone in the geometry. The 10 zones in the case which are \textit{Brick}, \textit{Slab}, \textit{Plaster}, \textit{ConreteTop}, \textit{ConreteBottom}, \textit{IntAirTop}, \textit{ExtAir}, \textit{IntAirBottom}, \textit{InsulationTop}, and \textit{InsulationBottom}. Below in \cref{constc} is an explanation of the case contents. The text files in this case are written automatically due to the script setup in GH. While constructing the constant file, the specific heat capacity of each material was needed, so we followed the steps below to find it (Brick Example):
+An OF steady state heat transfer case requires three main folders to run which are iteration \textit{0}, \textit{constant}, and \textit{system} folders. Each folder is responsible for properties or boundary conditions and includes these conditions in each zone in the geometry. The 10 zones in the case which are \textit{Brick}, \textit{Slab}, \textit{Plaster}, \textit{ConreteTop}, \textit{ConreteBottom}, \textit{IntAirTop}, \textit{ExtAir}, \textit{IntAirBottom}, \textit{InsulationTop}, and \textit{InsulationBottom}. Below in \cref{constc} is an explanation of the case contents. The text files in this case are written automatically due to the script setup in GH. While constructing the constant file, the specific heat capacity of each material was needed, so we followed the steps below to find it (Brick Example):
 
 \begin{equation}
 \begin{aligned}
@@ -254,6 +259,7 @@ C_p &= 1.06 \, \text{kJ/kg.K} \times 1000 \\
 C_p &= 1060 \, \text{J/kg.K}
 \end{aligned}
 \end{equation}
+\todo{add this to the appendix and refer to it in the text.}
 
 
 
@@ -261,8 +267,7 @@ C_p &= 1060 \, \text{J/kg.K}
 
 
 
-
-\begin{figure}[tbh]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.77\columnwidth]{Figures/constc.png}
 \hspace{0.7cm}
@@ -278,7 +283,7 @@ This section explains the Grasshopper script that automatically creates and expo
 The component shown in \ref{matgh} is a dictionary for the material connected to specific geometry. Each different zone in Rhino needs to be connected to the shown component by adding the corresponding specifications for the material such as the name, type, temperature, specific heat capacity, thermal conductivity, and density. This component is considered the base and many other sections in the script depend on it such as writing the other text files in 0 files where the boundary conditions are needed or writing the constant and system files. 
 
 
-\begin{figure}[tbh]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.77\columnwidth]{Figures/materialgh.png}
 \hspace{0.7cm}
@@ -292,13 +297,14 @@ The component shown in \ref{matgh} is a dictionary for the material connected to
 The workflow shown in \ref{stlgh} is used to create an STL from the geometry in Rhino and export it to the \textit{trisurface} in the constant file to create the mesh using the mesh generation utility, \textit{snappyHexMesh} where an explanation is in \ref{meshsteps}.
 
 
-\begin{figure}[tbh]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.77\columnwidth]{Figures/stlgh.png}
 \hspace{0.7cm}
 \caption{GH STL Workflow}
 \label{stlgh}
 \end{figure}
+\todo{this figure is not useful}
 
 
 
@@ -343,7 +349,7 @@ The surface combinations workflow shown in \ref{surfgh} writes the zones interfa
 \caption{GH Surface Combinations Workflow}
 \label{surfgh}
 \end{figure}
-
+\todo{I would not show screenshots of your script if you keep it so disorganized.}
 
 
 \subsubsection{Write P File Example}
@@ -357,6 +363,7 @@ The sample in \ref{Pgh} writes all of the P files needed to run the simulation f
 \caption{GH Write P File Workflow}
 \label{Pgh}
 \end{figure}
+\todo{this figure is not useful}
 
 
 
@@ -445,11 +452,11 @@ This section discusses the results of key experimental results of our ongoing re
 
     %\hspace{3.5cm}\textbf{a}\hfill\textbf{b}\hspace{3.5cm}
     
-    \includegraphics[width=1\columnwidth, clip = true]{Figures/Figure_2.png}
+     \textbf{c}\includegraphics[width=1\columnwidth, clip = true]{Figures/Figure_2.png}
     \caption[3D Validation Plots]{Validation Plots. \textbf{(a)} \textbf{(b)}  \textbf{(c)} }
     \label{fig:validation-plots}
 \end{figure}
-
+\todo{Remove (c) from this figure and put it in separate figure. }
 
 
 
@@ -457,15 +464,21 @@ This section discusses the results of key experimental results of our ongoing re
 
 
 \section{Discussion}
-The results illustrate the capabilities of using Rhinoceros and Grasshopper to simplify the pre-processing and post-processing steps to run the 3D heat transfer simulation in OpenFOAM. The simulation focuses on highlighting convective and conductive heat transfer in architectural modeling due to the limitation of 3D heat transfer software.
+
+The results illustrate the capabilities of using Rhinoceros and Grasshopper to simplify the pre-processing and post-processing steps to run the 3D heat transfer simulation in OpenFOAM. The simulation focuses on convective and conductive heat transfer for a 3D heat transfer problem. 
+\todo{describe case study. It is a corner section of a building with a balcony}
 In some cases running the solver results in a diving by zero error which is SIFPE, but, the Grasshopper script needs to be recomputed due to opening a new Rhino file or making changes in the text files in the case path. 
+\todo{don't just say that! describe where the error exactly comes from!!! just saying some cases, doesn't help anyone. }
 
 The experimental design section can be easily validated by setting up a transient heat transfer case using the same \textit{chtMultiRegionFoam}. However, due to time constraints, three timesteps were chosen from the experimental results to be simulated in three separate steady-state heat transfer cases. The results are shown in \ref{table2d}, \ref{error2d} and \ref{fig:expr}. 
+\todo{start by saying what you have done, then say what more you could have done. say the CHT solver has transient capabilities and that you can provide time-dependent boundary conditions to leverage that capability.}
 
 Additional potential to the simulation is enabling the users to visualize the thermal comfort in the space (temperature of fluid in the space). Also, the use of the adaptable \textit{chtMultiRegionFoam} solver is designed to simulate complex heat transfer scenarios for various applications. It is suitable for analyzing and helping model the performance of heating and cooling systems in the HVAC  industry. The automotive industry also uses the solver to better understand engine cooling. Other uses for this solver include evaluating solar heat gain and analyzing heat exchangers.
+\todo{dont talk about automotive here, just focus on how you could use your workflow and improved versions of it for buildings}
 
-Using \textit{QuickField} software to post-process the validation case presents several shortcomings when compared to the OF simulation shown in this paper. These limitations include the inability to customize the probing locations, limited visualization capabilities, and the absence of point density adjustment in the temperature plots. These constraints affect and limit us to compare specific temperature plots. 
-Also, the limitations impacted the accuracy and flexibility of the 3D heat transfer simulations conducted by \textit{QuickField}. 
+Using \textit{QuickField} to post-process the validation case presents several shortcomings when compared to the OF simulation shown in this paper. These limitations include the inability to customize the probing locations, limited visualization capabilities, and the absence of point density adjustment in the temperature plots. These constraints affect and limit us to compare specific temperature plots. 
+Also, the limitations impacted the accuracy and flexibility of the 3D heat transfer simulations conducted by \textit{QuickField}. \todo{I do not understand that.}
 
-The workflow presented in the paper is an extension of the work on 2D conductive heat transfer using OF in Solving Thermal Bridging Problems for Architectural Applications with OpenFOAM by \cite{kastner2020solving}. 
+The workflow presented in the paper is an extension of the work on 2D conductive heat transfer using OF in Solving Thermal Bridging Problems for Architectural Applications with OpenFOAM by \cite{kastner2020solving}.  \todo{sounds like you should start with this sentence. Did you look at my research seminar materials that I sent you?!}
 The findings highlight several issues in the field, such as cost-effective software, and disconnection between architectural modeling software with heat transfer software. Finally, the simulation is currently automated, but the goal is to provide it as a plug-in tool in \textit{Grasshopper}.
+
