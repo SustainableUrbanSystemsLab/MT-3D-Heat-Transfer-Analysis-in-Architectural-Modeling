@@ -1,0 +1,535 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{ISO}{report}{}
+      \name{author}{1}{}{%
+        {{hash=5b512ee8a59deb284ad0a6a035ba10b1}{%
+           family={{ISO}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {International Organization for Standardization}%
+      }
+      \strng{namehash}{5b512ee8a59deb284ad0a6a035ba10b1}
+      \strng{fullhash}{5b512ee8a59deb284ad0a6a035ba10b1}
+      \strng{bibnamehash}{5b512ee8a59deb284ad0a6a035ba10b1}
+      \strng{authorbibnamehash}{5b512ee8a59deb284ad0a6a035ba10b1}
+      \strng{authornamehash}{5b512ee8a59deb284ad0a6a035ba10b1}
+      \strng{authorfullhash}{5b512ee8a59deb284ad0a6a035ba10b1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Available online}
+      \field{number}{65710}
+      \field{title}{{ISO 10211:2007 thermal bridges in building construction. test case A.3 validation}}
+      \field{type}{ISO Standard}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.iso.org/standard/65710.html
+      \endverb
+      \verb{url}
+      \verb https://www.iso.org/standard/65710.html
+      \endverb
+    \endentry
+    \entry{bergman2011fundamentals}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=d8986880ce30c45fc26bf3af70ef1c37}{%
+           family={Bergman},
+           familyi={B\bibinitperiod},
+           given={Theodore\bibnamedelima L},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=b22ea78229af4420d0683e5c6d56ef10}{%
+           family={Lavine},
+           familyi={L\bibinitperiod},
+           given={Adrienne\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=af629011276d698dac3cc48c1342c57b}{%
+           family={Incropera},
+           familyi={I\bibinitperiod},
+           given={Frank\bibnamedelima P},
+           giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=654dc52d997756b4d5c9062f75d0d2f8}{%
+           family={Dewitt},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima P},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons Hoboken, NJ}%
+      }
+      \strng{namehash}{814f2b512a2ec70b2179a1d5763fffc5}
+      \strng{fullhash}{18669947e1d40099422f81549640555e}
+      \strng{bibnamehash}{18669947e1d40099422f81549640555e}
+      \strng{authorbibnamehash}{18669947e1d40099422f81549640555e}
+      \strng{authornamehash}{814f2b512a2ec70b2179a1d5763fffc5}
+      \strng{authorfullhash}{18669947e1d40099422f81549640555e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Fundamentals of heat and mass transfer}}
+      \field{year}{2011}
+    \endentry
+    \entry{HTflux}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=853dbf53f9ef4ea7b2b6b0e0b20b069d}{%
+           family={Rüdisser},
+           familyi={R\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{853dbf53f9ef4ea7b2b6b0e0b20b069d}
+      \strng{fullhash}{853dbf53f9ef4ea7b2b6b0e0b20b069d}
+      \strng{bibnamehash}{853dbf53f9ef4ea7b2b6b0e0b20b069d}
+      \strng{authorbibnamehash}{853dbf53f9ef4ea7b2b6b0e0b20b069d}
+      \strng{authornamehash}{853dbf53f9ef4ea7b2b6b0e0b20b069d}
+      \strng{authorfullhash}{853dbf53f9ef4ea7b2b6b0e0b20b069d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{01}
+      \field{title}{{HTflux Simulation Software}}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.13140/RG.2.2.32748.54409
+      \endverb
+    \endentry
+    \entry{glaser1959graphisches}{article}{}
+      \name{author}{1}{}{%
+        {{hash=458d57caa7ec81ea56e700aef9a5795d}{%
+           family={Glaser},
+           familyi={G\bibinitperiod},
+           given={H},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{458d57caa7ec81ea56e700aef9a5795d}
+      \strng{fullhash}{458d57caa7ec81ea56e700aef9a5795d}
+      \strng{bibnamehash}{458d57caa7ec81ea56e700aef9a5795d}
+      \strng{authorbibnamehash}{458d57caa7ec81ea56e700aef9a5795d}
+      \strng{authornamehash}{458d57caa7ec81ea56e700aef9a5795d}
+      \strng{authorfullhash}{458d57caa7ec81ea56e700aef9a5795d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Kältetechnik}
+      \field{number}{10}
+      \field{title}{{Graphisches Verfahren zur Untersuchung von Diffusionsvorgängen}}
+      \field{volume}{11}
+      \field{year}{1959}
+      \field{pages}{345\bibrangedash 349}
+      \range{pages}{5}
+    \endentry
+    \entry{Yang}{article}{}
+      \name{author}{3}{}{%
+        {{hash=41ee36ec00931ecec42a4aea91d776eb}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0a555edf0f240dc7d4ebcbe1948035d4}{%
+           family={Pilet},
+           familyi={P\bibinitperiod},
+           given={TJ},
+           giveni={T\bibinitperiod}}}%
+        {{hash=71e5a63214c7e86ccc58a749849f436c}{%
+           family={Ordonez},
+           familyi={O\bibinitperiod},
+           given={JC},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{4e960cf846f3d923bf98a11bebab0e0d}
+      \strng{fullhash}{ab3f23d5856135492e97c07fed8b5617}
+      \strng{bibnamehash}{ab3f23d5856135492e97c07fed8b5617}
+      \strng{authorbibnamehash}{ab3f23d5856135492e97c07fed8b5617}
+      \strng{authornamehash}{4e960cf846f3d923bf98a11bebab0e0d}
+      \strng{authorfullhash}{ab3f23d5856135492e97c07fed8b5617}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Energy}
+      \field{title}{{Volume element model for 3D dynamic building thermal modeling and simulation}}
+      \field{volume}{148}
+      \field{year}{2018}
+      \field{pages}{642\bibrangedash 661}
+      \range{pages}{20}
+    \endentry
+    \entry{COMSOL}{article}{}
+      \name{author}{3}{}{%
+        {{hash=112c97862d980efad8df6d8c4b82d6f1}{%
+           family={Gerlich},
+           familyi={G\bibinitperiod},
+           given={Vladimír},
+           giveni={V\bibinitperiod}}}%
+        {{hash=d97c2985b1cbe755c02241230ac0fe43}{%
+           family={Sulovská},
+           familyi={S\bibinitperiod},
+           given={Kateřina},
+           giveni={K\bibinitperiod}}}%
+        {{hash=101c87d6b9983c9e249f3cf1cdfa04e1}{%
+           family={Zálešák},
+           familyi={Z\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{0d33b61f65a6976c5968f276e9f5d9e5}
+      \strng{fullhash}{2b33ce458d7afb503292ed42ef1ecced}
+      \strng{bibnamehash}{2b33ce458d7afb503292ed42ef1ecced}
+      \strng{authorbibnamehash}{2b33ce458d7afb503292ed42ef1ecced}
+      \strng{authornamehash}{0d33b61f65a6976c5968f276e9f5d9e5}
+      \strng{authorfullhash}{2b33ce458d7afb503292ed42ef1ecced}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Measurement}
+      \field{number}{6}
+      \field{title}{{COMSOL Multiphysics validation as simulation software for heat transfer calculation in buildings: Building simulation software validation}}
+      \field{volume}{46}
+      \field{year}{2013}
+      \field{pages}{2003\bibrangedash 2012}
+      \range{pages}{10}
+    \endentry
+    \entry{kastner2020solving}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=d9ae6e719ed94149cee0f55dde71c90e}{%
+           family={Kastner},
+           familyi={K\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=6899c7fae1a6383e861a3a281d8166a6}{%
+           family={Dogan},
+           familyi={D\bibinitperiod},
+           given={Timur},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a2b3433e40a46eec8ccc2adfda90fec}
+      \strng{fullhash}{4a2b3433e40a46eec8ccc2adfda90fec}
+      \strng{bibnamehash}{4a2b3433e40a46eec8ccc2adfda90fec}
+      \strng{authorbibnamehash}{4a2b3433e40a46eec8ccc2adfda90fec}
+      \strng{authornamehash}{4a2b3433e40a46eec8ccc2adfda90fec}
+      \strng{authorfullhash}{4a2b3433e40a46eec8ccc2adfda90fec}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{SimAUD 2020 Proceedings}
+      \field{title}{{Solving Thermal Bridging Problems for Architectural Applications with OpenFOAM}}
+      \field{year}{2020}
+      \field{pages}{405\bibrangedash 412}
+      \range{pages}{8}
+    \endentry
+    \entry{litrev2}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9e30f4d83e51714772436589aefbd0b9}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Wenzhou},
+           giveni={W\bibinitperiod}}}%
+        {{hash=55926e2ed0c54f92266d978954a4cdc3}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Tong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2c5c760e60327de20e63d71e78c35bca}{%
+           family={Tamura},
+           familyi={T\bibinitperiod},
+           given={Tetsuro},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{5bb47f9f1c79d537b9c4efb452433554}
+      \strng{fullhash}{5b47fda70adcefeff4c70b967a7bdd7e}
+      \strng{bibnamehash}{5b47fda70adcefeff4c70b967a7bdd7e}
+      \strng{authorbibnamehash}{5b47fda70adcefeff4c70b967a7bdd7e}
+      \strng{authornamehash}{5bb47f9f1c79d537b9c4efb452433554}
+      \strng{authorfullhash}{5b47fda70adcefeff4c70b967a7bdd7e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The global background of energy shortages and climate deterioration demands bioclimatic sustainable buildings. Vernacular architecture can provide a useful resource of passive strategies and techniques for creating inner comfort conditions with minimum heating, ventilation, and air conditioning (HVAC) assistance. The identification and verification of such knowledge are essential for climate responsive or energy passive building design. Among the methods, computational fluid dynamics (CFD) is a useful tool for simulating convective heat transfer of vernacular architecture and predicting the convective heat transfer coefficient (CHTC) and flow field. Geometric complexity and diversity of building samples are crucial in the development of an effective simulation methodology in terms of computational cost and accuracy. Therefore, this paper presents high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations of convective heat transfer on Japanese vernacular architecture, namely, “machiya.” A CFD validation study on the CHTC is performed based on wind-tunnel experiments on a cube heated by constant heat flux and placed in a turbulent channel flow with a Reynolds number of 3.3 × 104. Three steady RANS models and two boundary layer modeling approaches are compared and discussed. Results show that the SST k-ω model applied with low Reynolds number modeling approach is suitable for CHTC simulations on a simplified building model. The RNG k-ε model applied with wall functions is an appropriate choice for simulating flow field of a complicated building model. Overall, this study develops a methodology involving RANS model selection, boundary layer modeling, and target model fitting to predict the convective heat transfer on vernacular architecture.}
+      \field{issn}{2071-1050}
+      \field{journaltitle}{Sustainability}
+      \field{number}{15}
+      \field{title}{CFD Simulation of Convective Heat Transfer on Vernacular Sustainable Architecture: Validation and Application of Methodology}
+      \field{volume}{11}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.3390/su11154231
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2071-1050/11/15/4231
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2071-1050/11/15/4231
+      \endverb
+    \endentry
+    \entry{heattransfund}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=5ef1bb6432b198f2cf72e2af78895a1d}{%
+           family={Zhai},
+           familyi={Z\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{5ef1bb6432b198f2cf72e2af78895a1d}
+      \strng{fullhash}{5ef1bb6432b198f2cf72e2af78895a1d}
+      \strng{bibnamehash}{5ef1bb6432b198f2cf72e2af78895a1d}
+      \strng{authorbibnamehash}{5ef1bb6432b198f2cf72e2af78895a1d}
+      \strng{authornamehash}{5ef1bb6432b198f2cf72e2af78895a1d}
+      \strng{authorfullhash}{5ef1bb6432b198f2cf72e2af78895a1d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Wiley}
+      \field{title}{{Energy Efficient Buildings: Fundamentals of Building Science and Thermal Systems}}
+      \field{year}{2023}
+      \field{pages}{chapter 1}
+      \range{pages}{-1}
+    \endentry
+    \entry{greenteg}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{{GreenTeg. (n.d.). U-value - GreenTeg}}
+      \verb{urlraw}
+      \verb \url{https://shop.greenteg.com/u-value/}
+      \endverb
+      \verb{url}
+      \verb %5Curl%7Bhttps://shop.greenteg.com/u-value/%7D
+      \endverb
+    \endentry
+    \entry{cht}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=2b10a06586cef02b3fcf7a28e497b1dc}{%
+           family={Singhal},
+           familyi={S\bibinitperiod},
+           given={Arpit},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b10a06586cef02b3fcf7a28e497b1dc}
+      \strng{fullhash}{2b10a06586cef02b3fcf7a28e497b1dc}
+      \strng{bibnamehash}{2b10a06586cef02b3fcf7a28e497b1dc}
+      \strng{authorbibnamehash}{2b10a06586cef02b3fcf7a28e497b1dc}
+      \strng{authornamehash}{2b10a06586cef02b3fcf7a28e497b1dc}
+      \strng{authorfullhash}{2b10a06586cef02b3fcf7a28e497b1dc}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{08}
+      \field{title}{{Tutorial to set up a case for chtMultiRegionFoam in OpenFOAM 2.0.0}}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb http://www.slideshare.net/ARPITSINGHAL3/cht-multiregionfoam4regiontutorial
+      \endverb
+      \verb{url}
+      \verb http://www.slideshare.net/ARPITSINGHAL3/cht-multiregionfoam4regiontutorial
+      \endverb
+    \endentry
+    \entry{OFD}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d97f451a465bc76efd02bfc32dda3d84}{%
+           family={OpenFOAM},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{fullhash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{bibnamehash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{authorbibnamehash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{authornamehash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{authorfullhash}{d97f451a465bc76efd02bfc32dda3d84}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{chtMultiRegionFoam Solver Documentation}}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.openfoam.com/documentation/guides/latest/doc/guide-applications-solvers-heat-transfer-chtMultiRegionFoam.html
+      \endverb
+      \verb{url}
+      \verb https://www.openfoam.com/documentation/guides/latest/doc/guide-applications-solvers-heat-transfer-chtMultiRegionFoam.html
+      \endverb
+    \endentry
+    \entry{hce}{article}{}
+      \name{author}{3}{}{%
+        {{hash=41b4efd55baa2d46cf0f2d842d9f2a50}{%
+           family={Vollaro},
+           familyi={V\bibinitperiod},
+           given={Andrea\bibnamedelimb De\bibnamedelima Lieto},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=b85ffbf26c988f3871345c7b1278c8f5}{%
+           family={Galli},
+           familyi={G\bibinitperiod},
+           given={Giorgio},
+           giveni={G\bibinitperiod}}}%
+        {{hash=21b0ee6e6c32f16278f1c4a2ecaea616}{%
+           family={Vallati},
+           familyi={V\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{6547bcbfeaacd673ea749d075a9c8c04}
+      \strng{fullhash}{bd9a325acb10221c0d85218e18d0c282}
+      \strng{bibnamehash}{bd9a325acb10221c0d85218e18d0c282}
+      \strng{authorbibnamehash}{bd9a325acb10221c0d85218e18d0c282}
+      \strng{authornamehash}{6547bcbfeaacd673ea749d075a9c8c04}
+      \strng{authorfullhash}{bd9a325acb10221c0d85218e18d0c282}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Convective heat transfer coefficients for external building surfaces are essential in building energy simulation (BES) to calculate convective heat gains and losses from building facades and roofs to the environment. These coefficients are complex functions of: building geometry, building surroundings, local air flow patterns and temperature differences. A microclimatic analysis in a typical urban configuration, has been carried out using Ansys Fluent Version 14.0, an urban street canyon, with a given H/W ratio, has been considered to simulate a three-dimensional flow field and to calculate the thermal fluid dynamics parameters that characterize the street canyon. In this paper, the convective heat transfer coefficient values on the windward external façade of the canyon and on the windward and leeward inner walls are analyzed and a comparison with values from experimental and numerical correlations is carried out.}
+      \field{issn}{2071-1050}
+      \field{journaltitle}{Sustainability}
+      \field{number}{7}
+      \field{title}{CFD Analysis of Convective Heat Transfer Coefficient on External Surfaces of Buildings}
+      \field{volume}{7}
+      \field{year}{2015}
+      \field{pages}{9088\bibrangedash 9099}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.3390/su7079088
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2071-1050/7/7/9088
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2071-1050/7/7/9088
+      \endverb
+    \endentry
+    \entry{OpenFOAMFoundation}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d97f451a465bc76efd02bfc32dda3d84}{%
+           family={OpenFOAM},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{fullhash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{bibnamehash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{authorbibnamehash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{authornamehash}{d97f451a465bc76efd02bfc32dda3d84}
+      \strng{authorfullhash}{d97f451a465bc76efd02bfc32dda3d84}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{ChtMultiRegionFoam}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://openfoamwiki.net/index.php/ChtMultiRegionFoam
+      \endverb
+      \verb{url}
+      \verb https://openfoamwiki.net/index.php/ChtMultiRegionFoam
+      \endverb
+    \endentry
+    \entry{kendeda}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ab8117448e70520b60c62741bb080601}{%
+           family={Keneda},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{ab8117448e70520b60c62741bb080601}
+      \strng{fullhash}{ab8117448e70520b60c62741bb080601}
+      \strng{bibnamehash}{ab8117448e70520b60c62741bb080601}
+      \strng{authorbibnamehash}{ab8117448e70520b60c62741bb080601}
+      \strng{authornamehash}{ab8117448e70520b60c62741bb080601}
+      \strng{authorfullhash}{ab8117448e70520b60c62741bb080601}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Microgrant}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://research.gatech.edu/micro-research-grants-awarded
+      \endverb
+      \verb{url}
+      \verb https://research.gatech.edu/micro-research-grants-awarded
+      \endverb
+    \endentry
+    \entry{ibpc}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=50e005057e85e07c7f57dcb7dcd1259a}{%
+           family={ibpc},
+           familyi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{50e005057e85e07c7f57dcb7dcd1259a}
+      \strng{fullhash}{50e005057e85e07c7f57dcb7dcd1259a}
+      \strng{bibnamehash}{50e005057e85e07c7f57dcb7dcd1259a}
+      \strng{authorbibnamehash}{50e005057e85e07c7f57dcb7dcd1259a}
+      \strng{authornamehash}{50e005057e85e07c7f57dcb7dcd1259a}
+      \strng{authorfullhash}{50e005057e85e07c7f57dcb7dcd1259a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{ibpc}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.ibpc2024.org/
+      \endverb
+      \verb{url}
+      \verb https://www.ibpc2024.org/
+      \endverb
+    \endentry
+    \entry{issst}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9f86e00a86d459ccafb34e3b3ea158b0}{%
+           family={issst},
+           familyi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f86e00a86d459ccafb34e3b3ea158b0}
+      \strng{fullhash}{9f86e00a86d459ccafb34e3b3ea158b0}
+      \strng{bibnamehash}{9f86e00a86d459ccafb34e3b3ea158b0}
+      \strng{authorbibnamehash}{9f86e00a86d459ccafb34e3b3ea158b0}
+      \strng{authornamehash}{9f86e00a86d459ccafb34e3b3ea158b0}
+      \strng{authorfullhash}{9f86e00a86d459ccafb34e3b3ea158b0}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{issst}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://issst.net/issst-2024/
+      \endverb
+      \verb{url}
+      \verb https://issst.net/issst-2024/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
