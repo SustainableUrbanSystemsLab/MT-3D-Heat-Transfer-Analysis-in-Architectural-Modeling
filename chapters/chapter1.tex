@@ -1,15 +1,70 @@
-\chapter{Introduction and Background}
-Architects and engineers refer to ASHRAE standards to comply with the minimum required insulation based on the location of the project. 
-In adhering to these standards, there is the potential to optimize the selection of materials and seek a greater impact on thermal comfort. 
-However, modeling 3D heat transfer of buildings is a complex and long process for architects due to the available software. 
+\chapter{Heat Transfer in Buildings}
 
-This research aims to bridge the gap between providing architects with easy-to-use 3D heat transfer software that is integrated into architect design software, such as \textit{Rhino\, \&\, Grasshopper}. Here, we used \textit{OpenFOAM (OF) / Grasshopper} to construct an envelope segment from \textit{ISO 10211:2007}
-\cite{ISO}, then calculate heat transfer, and assess whether the validated case complies with our results. 
+
+
+The capabilities of current software packages are specific to remodeling one wall or section in separate software, rather than integrating it into the design process using design software packages.  \todo{name the software you are talking about. Therm?}
+This requires the user to remodel walls, sections, or entire buildings, depending on the scale of the project and the number of design changes involved.
+
+Traditional building design processes often rely on simplified 2D heat transfer models, which fail to capture the precise thermal interactions that occur in the real world. This limitation affects the accuracy of performance predictions and affects the identification of optimal design solutions for energy efficiency. 
+3D simulations offer a more realistic representation of thermal transfer, accounting for both conduction and convection. 
+Moreover, they hold massive potential for cost reduction and carbon emission mitigation. 
+By accurately predicting thermal loads and optimizing HVAC systems\todo{you are not doing HVAC here, remove that}, designers can minimize energy consumption, thus reducing operational costs for building owners. 
+
+
+
+%The impact of this research is significant on energy efficiency, reduced operational carbon, and possibly reduced embodied carbon by adding the climate zone, and the tool will provide recommendations.
+
+%\clearpage
+
+
+
+\section{Literature Review}
+
+
+
+
+
+%\section{Literature Review}
+%We conducted a qualitative literature review to understand the current potential of 3D heat transfer software for architects. 
+% First, a review was made to understand the capabilities of $HTflux$ and $THERM$ \cite{THERM}, which are the main heat transfer software for modelers. 
+
+% HTFlux
+Current tools are limited to 2D heat transfer, such as \textit{HTflux} \cite{HTflux}, which is specialized software for simulations of two-dimensional heat and water vapor transport. \todo{add table of figure that shows overview of all tools you found: HTflux, Therm, etc.}
+It uses the 2D Glaser method \cite{glaser1959graphisches} to calculate dew points, condensation, and evaporation in 2D structures. 
+The software offers an easy-to-use interface, can import CAD geometries, and employs a direct mapping method for accurate simulations. 
+It provides various thermal analysis metrics (heat flow, U-value, $\psi$-value, etc.) and measures extreme temperature values. Two contributions stand out that discuss different 3D heat transfer elements and approaches by  \cite{Yang}, and \cite{COMSOL}, whereas one contribution presents 2D heat transfer using OpenFOAM \cite{kastner2020solving}.
+
+\cite{kastner2020solving} presented a case study that presents a thermal bridge analysis and 2D heat transfer with OpenFOAM, which is similar to our approach due to the use of OF. The simulation is constructed from pre-processing, simulation, and post-processing. 
+Based on the result of the used case, it is possible to use \textit{Rhino\ \&\ Grasshopper} to calculate architectural heat transfer in the pre- and post-processing phases, but this requires additional research to achieve this goal. 
+The authors experimented with a validation case retrieved from \textit{HTflux} that was originally published in the ISO guide \cite{kastner2020solving,ISO}. 
+
+The second approach is found from \cite{Yang} which experimented with 3D heat transfer following a different method, which is to develop a mesh using lumped hexahedral elements and employs ray/triangle intersection techniques for an accurate geometric representation of the building. 
+It applies an energy balance to each element and integrates a system of ordinary differential equations to obtain spatio-temporal indoor temperature and relative humidity fields. 
+However, there are several limitations, such as not explicitly solving flow fields, which may limit its accuracy in capturing complex airflow patterns. 
+Furthermore, idealized thermal conditions do not include real world conditions and do not accurately represent the impact of the thermal mass of the floor. 
+\cite{Yang}. 
+
+
+The third approach by \cite{COMSOL} used \textit{COMSOL / Multiphysics} to simulate heat transfer in buildings and has been validated. There were minor differences in the results due to the convective heat transfer coefficient. 
+The main issues with the software are the cost and the need to use software that is not integrated in the design software.
+However, the authors' work is valuable in terms of offering heat transfer simulation focusing on buildings.  %cost
+
+The final research by Zhong et al., 2019 \cite{litrev2} is directly connected to this research workflow of investigating the computational fluid dynamics (CFD) simulation of convective heat transfer but specifically on Japanese vernacular architecture, focusing on "machiya" buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal HVAC assistance. The study aims to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations. Through comparison and evaluation of different RANS models and boundary layer modeling approaches, the researchers identify suitable methods for predicting convective heat transfer coefficients (CHTC) and flow fields. Validation against wind-tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to advancing simulation methodologies for sustainable building design but did not meet the objective of automating the heat transfer workflow to simplify it for the user \cite{litrev2}. 
+
+
+% Heim
+%\citet{Heim2005} presented a two-solution method to simulate a dynamic heat transfer problem with phase change materials (PCM). The objectives of the paper are to provide a comparison between two solutions for specific and latent heat transfer through the building components, which are the effective heat capacity method and the additional heat source method. There are several differences between the two methods, such as, in the effective heat capacity method, the heat capacity is considered a function of the melting and solidification phase change. However, in the additional heat source method, the phase change depends on the temperature of the internal heat gain flux. The study is carried out around the embedded PCM in the building structure to add additional latent heat and increase the thermal capacity of the material. Both methods achieved the objective with a slight difference in the results. However, the author indicates that the numerical models used in the ESP-r require further validation and refinement.  
+
+
+%\clearpage
+
+
 
 
 \section{Heat Transfer}
+\todo{needs better name for section}
 
-The project presents a simulation based on conductive and convective heat transfer. 
+This thesis presents a simulation based on conductive and convective heat transfer. 
 One may calculate conductive heat transfer using the heat diffusion equation \cite{bergman2011fundamentals}:
 	
 	\begin{equation} 
@@ -31,23 +86,12 @@ To calculate convective heat transfer, the used formula accounts for both advect
 where $\mathbf{v}$ is the velocity vector of the fluid, $\alpha$ is the thermal diffusivity, $\nabla$ stands for the gradient operator, $\nabla^2$ represents the Laplacian operator, $\dot{q}$ is the energy generation rate per unit volume, and $k$ is the thermal conductivity \cite{bergman2011fundamentals}.
 
 
+\todo{add sentence on conjugate heat transfer approach that tries to offer an approach to solving such problems, see Wikipedia.}
 
-\section{History on Modeling Thermal Bridges in Buildings}
-The capabilities of current software packages are specific to remodeling one wall or section in separate software, rather than integrating it into the design process using design software packages. 
-This requires the user to remodel walls, sections, or entire buildings.
-Traditional building design processes often rely on simplified 2D heat transfer models, which fail to capture the precise thermal interactions that occur in the real world. This limitation affects the accuracy of performance predictions and affects the identification of optimal design solutions for energy efficiency. 
-3D simulations offer a more realistic representation of thermal transfer, accounting for both conduction and convection. 
-Moreover, they hold massive potential for cost reduction and carbon emission mitigation. 
-By accurately predicting thermal loads and optimizing HVAC systems, designers can minimize energy consumption, thus reducing operational costs for building owners. 
+\todo{Add sentences of how this cannot be done by hand due to the nature of the differential equations.}
 
 
-
-%The impact of this research is significant on energy efficiency, reduced operational carbon, and possibly reduced embodied carbon by adding the climate zone, and the tool will provide recommendations.
-
-%\clearpage
-
-
-
+\todo{I would actually talk about the history first, then the equations. I reordered it now.}
 
 
 
@@ -57,38 +101,4 @@ By accurately predicting thermal loads and optimizing HVAC systems, designers ca
 \section{Computational Fluid Dynamics}
 The approach this research follows uses OpenFOAM which stands for Open-source Field Operation and Manipulation and is a widely used open-source computational fluid dynamics  (CFD) software package that allows engineers and researchers to simulate fluid flow, heat transfer, and other related phenomena using numerical methods. The project uses CFD to calculate the heat flow gradient in the space.
 
-
-
-\section{Literature Review}
-%We conducted a qualitative literature review to understand the current potential of 3D heat transfer software for architects. 
-% First, a review was made to understand the capabilities of $HTflux$ and $THERM$ \cite{THERM}, which are the main heat transfer software for modelers. 
-
-% HTFlux
-Current tools are limited to 2D heat transfer, such as \textit{HTflux} \cite{HTflux}, which is specialized software for simulations of two-dimensional heat and water vapor transport. 
-It uses the 2D Glaser method \cite{glaser1959graphisches} to calculate dew points, condensation, and evaporation in 2D structures. 
-The software offers an easy-to-use interface, can import CAD geometries, and employs a direct mapping method for accurate simulations. 
-It provides various thermal analysis metrics (heat flow, U-value, $\psi$-value, etc.) and measures extreme temperature values. Two contributions stand out that discuss different 3D heat transfer elements and approaches by  \cite{Yang}, and \cite{COMSOL}, whereas one contribution presents 2D heat transfer using OpenFOAM \cite{kastner2020solving}.
-
-\cite{kastner2020solving} presented a case study that presents a thermal bridge analysis and 2D heat transfer with OpenFOAM, which is similar to our approach due to the use of OF. The simulation is constructed from pre-processing, simulation, and post-processing. 
-Based on the result of the used case, it is possible to use \textit{Rhino\ \&\ Grasshopper} to calculate architectural heat transfer in the pre- and post-processing phases, but this requires additional research to achieve this goal. 
-The authors experimented with a validation case retrieved from \textit{HTflux} that was originally published in the ISO guide \cite{kastner2020solving,ISO}. 
-
-The second approach is found from \cite{Yang} which experimented with 3D heat transfer following a different method, which is to develop a mesh using lumped hexahedral elements and employs ray/triangle intersection techniques for an accurate geometric representation of the building. 
-It applies an energy balance to each element and integrates a system of ordinary differential equations to obtain spatio-temporal indoor temperature and relative humidity fields. 
-However, there are several limitations, such as not explicitly solving flow fields, which may limit its accuracy in capturing complex airflow patterns. 
-Furthermore, idealized thermal conditions do not include real world conditions and do not accurately represent the impact of the thermal mass of the floor. 
- \cite{Yang}. 
-
-
-The third approach by \cite{COMSOL} used \textit{COMSOL / Multiphysics} to simulate heat transfer in buildings and has been validated. There were minor differences in the results due to the convective heat transfer coefficient. 
-The main issues with the software are the cost and the need to use software that is not integrated in the design software.
-However, the authors' work is valuable in terms of offering heat transfer simulation focusing on buildings.  %cost
-
-The final research by Zhong et al., 2019 \cite{litrev2} is directly connected to this research workflow of investigating the computational fluid dynamics (CFD) simulation of convective heat transfer but specifically on Japanese vernacular architecture, focusing on "machiya" buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal HVAC assistance. The study aims to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations. Through comparison and evaluation of different RANS models and boundary layer modeling approaches, the researchers identify suitable methods for predicting convective heat transfer coefficients (CHTC) and flow fields. Validation against wind-tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to advancing simulation methodologies for sustainable building design but did not meet the objective of automating the heat transfer workflow to simplify it for the user \cite{litrev2}. 
-
-
-% Heim
-%\citet{Heim2005} presented a two-solution method to simulate a dynamic heat transfer problem with phase change materials (PCM). The objectives of the paper are to provide a comparison between two solutions for specific and latent heat transfer through the building components, which are the effective heat capacity method and the additional heat source method. There are several differences between the two methods, such as, in the effective heat capacity method, the heat capacity is considered a function of the melting and solidification phase change. However, in the additional heat source method, the phase change depends on the temperature of the internal heat gain flux. The study is carried out around the embedded PCM in the building structure to add additional latent heat and increase the thermal capacity of the material. Both methods achieved the objective with a slight difference in the results. However, the author indicates that the numerical models used in the ESP-r require further validation and refinement.  
-
-
-%\clearpage
+\todo{add section on CHT solver that we are using for this.}

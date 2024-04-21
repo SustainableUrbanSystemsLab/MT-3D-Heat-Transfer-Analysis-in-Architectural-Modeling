@@ -1,5 +1,7 @@
+%!TEX root = ../thesis.tex
+
 \chapter{2D Heat Transfer Methodology}
-The first step before experimenting with the 3D heat transfer simulation is to understand the simplest form of heat transfer in buildings. This chapter presents the calculation of a 2D section of a brick wall. Followed by the experimental design, results, and discussion.
+The first step before experimenting with the 3D heat transfer simulation is to understand the simplest form of heat transfer in buildings. This chapter presents the calculation of a 2D section of a single-layer brick wall. Followed by the experimental design, results, and discussion.
 
 \section{Manual Estimation of Heat Flux}
 The heat flux calculation for the 2D section shown in \ref{fig:2d2} \textbf{(a)} is as follows:
@@ -27,11 +29,11 @@ So, the heat flux \( q \) is \( 10.93 \, \text{W/m}^2 \).
 
 
 
-
-
-
 \section{Experiment}
-This section presents a real-time measurement of the 2D brick wall with a duration of 74 hours using U-value and heat flux sensors as shown in \ref{fig:figexp1} \textbf{(a)} and \ref{fig:figexp1} \textbf{(b)}. Then followed by a 2D simulation section where the same experimental design conditions are implemented in HTflux \cite{HTflux} a 2D heat transfer simulation software.
+\todo{needs better section title, not just "experiment"}
+
+
+This section presents a real-time measurement of the 2D brick wall with a duration of 74 hours\todo{add dates and which building. where did we measure} using U-value and heat flux sensors as shown in \ref{fig:figexp1} \textbf{(a)} and \ref{fig:figexp1} \textbf{(b)}. Then followed by a 2D simulation section where the same experimental design conditions are implemented in HTflux \cite{HTflux} a 2D heat transfer simulation software.
 
 \begin{figure}[htb]
     \centering
@@ -81,7 +83,7 @@ Where k = 1 \text{ W/(m²)}, L (thickness) = 0.43. So, \(U_{\text{calc}}\) = \(U
 \begin{figure}[htb]
      \centering
     \includegraphics[width=1\linewidth]{Figures/Validation}
-     \caption[Experimental Report Plot]{The heat flux results over time.}
+     \caption[Experimental Report Plot]{The heat flux results over time.}\todo{needs more detailed caption}
    \label{fig:expr}
  \end{figure}
 
@@ -95,10 +97,12 @@ Where k = 1 \text{ W/(m²)}, L (thickness) = 0.43. So, \(U_{\text{calc}}\) = \(U
         Time                & T1val\_in & T1sim\_in & T2val\_out & T2sim\_out & Qval & Qsim \\
         \midrule
         3/14/2024 16:14 & 298.39    & 298.37    & 302.7     & 302.7     & 17.38 & 17.29 \\
-        3/15/2024 2:14  & 300.76    & 300.768   & 295.51    & 295.6     & 8.99  & 8.36  \\
+        3/15/2024 02:14  & 300.76    & 300.768   & 295.51    & 295.6     & 8.99  & 8.36  \\
         3/16/2024 13:04 & 297.4525  & 297.452   & 293.827   & 293.827   & 12.54 & 12.2  \\
         \bottomrule
     \end{tabular}
+    \todo{make sure to have reasonable significant decimals everywhere. stay consistent.}
+    \todo{Make sure to format variables correctly, such as $T_{1,val,in}$}
 \end{table}
 
 \begin{table}[]
@@ -130,6 +134,7 @@ Where k = 1 \text{ W/(m²)}, L (thickness) = 0.43. So, \(U_{\text{calc}}\) = \(U
 \end{minipage}
 \caption{2D Section and Setup}
 \label{fig:2d2}
+\todo{figure a is probably enough here}
 \end{figure}
 
 
@@ -153,6 +158,8 @@ Where k = 1 \text{ W/(m²)}, L (thickness) = 0.43. So, \(U_{\text{calc}}\) = \(U
 
 
 \section{Simulation}
+\todo{add subsections here that make very clear that the first simulations are done with OpenFOAM, the others are done with HTFlux}
+
 After successfully finding and ensuring the compliance of the heat flux in the two methods, which are the calculation and the experiment, the final method uses a 2D heat transfer simulation, HTFlux \cite{HTflux}. The same brick wall with the same boundary conditions is constructed in the software as shown in \ref{2dconst} \textbf{(a)} which shows the materials and the boundary condition and \textbf{(b)} represents the 2D simulation results where the resulting heat flux = \( q \) is \( 10.91 \, {W/m}^2 \) as expected.
 
 
@@ -173,8 +180,9 @@ After successfully finding and ensuring the compliance of the heat flux in the t
 \end{minipage}
 \caption{2D HTFlux Boundary conditions and Results}
 \label{2dconst}
+\todo{add heat flux you found also in figure caption.}
 \end{figure}
 
 
 \section{Discussion}
-This section successfully presented the resources to calculate the heat flux of a 2D brick wall using three methods, which are by calculation, using sensors, using 2D simulation software where the heat flux q, respectively, = \( 10.93 \, {W/m}^2 \), \( 10.93 \, {W/m}^2 \), and\( 10.91 \, {W/m}^2 \). However, the gap of 3D heat transfer simulation is still missing. Thus, chapter 3 showcases the workflow of a free 3D heat transfer simulation.
+This section successfully presented the resources to calculate the heat flux of a 2D brick wall using three methods, which are by calculation, using sensors, using 2D simulation software where the heat flux q, respectively, = \( 10.93 \, {W/m}^2 \), \( 10.93 \, {W/m}^2 \), and \( 10.91 \, {W/m}^2 \). However, the gap of 3D heat transfer simulation is still missing. Thus, chapter 3 showcases the workflow of a free 3D heat transfer simulation.
