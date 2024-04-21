@@ -1,0 +1,301 @@
+
+% The environment used here (theappendices) is a wrapper for the basic appendices environment which changes the appearance of the title page and the structure and appearance of the appendices in the table of contents and PDF bookmarks. The original functionality can be restored by simply removing the 'the' from the \begin{} and \end{} statements below.
+
+\begin{theappendices}
+
+
+\chapter{Experimental Equipment}
+
+
+
+
+\begin{table}[tbh]
+
+\begin{framed}
+    
+
+\begin{itemize}
+    \setlength\itemsep{-0.2em}
+    \item \textbf{Product:} gSKIN® KIT-2615C (calibrated)
+    \item \textbf{Article Number:} A-163479
+    \item \textbf{GSKIN® KIT Includes (For More Details Consult The Datasheets Of The Individual Products):}
+    \begin{itemize}
+        \item Sensor: gSKIN®-XO 67 7C (30mm x 30mm)
+        \item Logger: gSKIN® DLOG-4231
+        \item Double-sided mounting tape (MOUNT-1235)
+    \end{itemize}
+    \item \textbf{Heat Flux:}
+    \begin{itemize}
+        \item Range Min / Max [W/M²]: ±300
+        \item Resolution [W/M²]: $<$ 0.22
+    \end{itemize}
+    \item \textbf{Temperature Accuracy [°C]:}
+    \begin{itemize}
+        \item ±0.5 (-10...+46 °C)
+        \item ±2.0 (-55...+125 °C)
+    \end{itemize}
+    
+    \item \textbf{Min. Sensor Sensitivity} 
+    7.0 (sensor calibration data already loaded onto logger for simple and fast plug-and-play measurements)
+    \item \textbf{Data Storage Capacity \# Measurements]:} $<$ 2’000’000
+    \item \textbf{Battery Lifetime [Days]:} $<$ 30 at lowest measurement frequency (2/d). Rechargeable.
+    \item \textbf{Software:} Installation - SW sent by email / via download link
+    \item \textbf{Logger Dimensions (mm):} 52 x 20 x 15
+    \item \textbf{Bit Resolution [Bits]:} 12
+    \item \textbf{Operation Modes:} Autonomous / Live
+    \item \textbf{Operating Temperature Range Min/Max [°C]:} -40 / 100 (-25 / 65 for Logger)
+    \item \textbf{Operating System:} Windows 2000 / XP / Vista / 7 / 8
+    \item \textbf{Calibration Accuracy $\mp$\%} 3 (Sensor calibration data already loaded onto logger for simple and fast plug-and-play measurements)
+    \item \textbf{Calibration Temperature Range Min/Max [°C]:} -30 / 70
+    \item \textbf{Heat Flux Sensor Cable Length [m]:} 1.5 (with connector)
+    \item \textbf{Temperature Sensor 1 / 2 Cable Length [m]:} 5.0 / 1.0
+    \item \textbf{Measurement Frequency:} 1/s to 1/h
+    \item \textbf{Computer Interface:} USB 
+    
+\end{itemize}
+
+\end{framed}
+   
+    \caption{U-value measurement kit specifications by GreenTeg.}
+    \label{tab:u-value-measurement-kit}
+
+\end{table}
+
+
+
+\singlespacing
+\chapter{T File 0 Example}
+\begin{lstlisting}[language=c++, caption=OF text file in 0/Brick/T]
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       volScalarField;
+    location    "0/";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 0 0 1 0 0 0 ];
+
+internalField   uniform 270;
+
+
+boundaryField
+{
+Brick_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 273;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+\end{lstlisting}
+
+
+
+
+\singlespacing
+\chapter{File Constant Example}
+\begin{lstlisting}[language=c++, caption=OF text file in constant/Brick/thermophysicalproperties]
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2306                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType
+{
+    type            heSolidThermo;
+    mixture         pureMixture;
+    transport       constIso;
+    thermo          hConst;
+    equationOfState rhoConst;
+    specie          specie;
+    energy          sensibleEnthalpy;
+  }
+
+mixture
+{
+    specie
+    {
+        molWeight   12;
+    }
+    transport
+    {
+        kappa   80;
+    }
+    thermodynamics
+    {
+        Hf      1;
+        Cp      1060;
+    }
+    equationOfState
+    {
+        rho     1600;
+    }
+}
+
+
+// ************************************************************************* //
+\end{lstlisting}
+
+
+
+
+
+
+\singlespacing
+\chapter{File System Example}
+\begin{lstlisting}[language=c++, caption=OF text file in System/Brick/fvsolution]
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2306                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+    "(rho|rhoFinal)"
+    {
+        solver          PCG;
+        preconditioner  DIC;
+        tolerance       1e-7;
+        relTol          0;
+    }
+
+    p_rgh
+    {
+        solver           GAMG;
+        tolerance        1e-7;
+        relTol           0.01;
+        smoother         GaussSeidel;
+    }
+
+    p_rghFinal
+    {
+        $p_rgh;
+        tolerance        1e-7;
+        relTol           0;
+    }
+
+\end{lstlisting}
+
+
+
+
+\singlespacing
+\chapter{Write T File Example}
+\begin{lstlisting}[language=c++, caption= Code in GH to write OF text file in 0/Brick/T]
+  String directoryPath = path + @"\0\";
+
+    if (!Directory.Exists(directoryPath))
+    {
+      Directory.CreateDirectory(directoryPath);
+    }
+
+
+    String filePath = directoryPath + @"\" + fileName;
+
+
+    A = filePath;
+
+
+
+    File.Delete(filePath);
+
+    using(var tw = new StreamWriter(filePath)) // new StreamWriter(path, true) for append
+    {
+      tw.WriteLine(head);
+      tw.WriteLine(data);
+
+
+
+
+      tw.WriteLine("boundaryField");
+      tw.WriteLine("{");
+      foreach (Mesh  m in zoneNames)
+      {
+        //tw.WriteLine(str);
+        //tw.WriteLine("{");
+        tw.WriteLine(m.UserDictionary["name"]);
+        tw.WriteLine("{");
+        tw.WriteLine("  type " + m.UserDictionary["type"] + ";");
+        tw.WriteLine("  value uniform " + m.UserDictionary["temp"] + ";");
+        tw.WriteLine("}");
+        //tw.WriteLine("}");
+      }
+      foreach (GeometryBase geo in bMBoundaries)
+      {
+        tw.WriteLine(geo.UserDictionary["name"]);
+        tw.WriteLine("{");
+        tw.WriteLine("  type " + geo.UserDictionary["type"] + ";");
+        tw.WriteLine("  value uniform " + geo.UserDictionary["temp"] + ";");
+        tw.WriteLine("}");
+      }
+
+      foreach (GeometryBase geo in actualBoundaries)
+      {
+        tw.WriteLine(geo.UserDictionary["name"]);
+        tw.WriteLine("{");
+        tw.WriteLine("  type " + geo.UserDictionary["type"] + ";");
+        tw.WriteLine("  value uniform " + geo.UserDictionary["temp"] + ";");
+        tw.WriteLine("}");
+        tw.WriteLine(geo.UserDictionary["name"].ToString().Split(new string[] { "_to_" }, StringSplitOptions.None)[1] + "_to_" + geo.UserDictionary["name"].ToString().Split(new string[] { "_to_" }, StringSplitOptions.None)[0]);
+        tw.WriteLine("{");
+        tw.WriteLine("  type " + geo.UserDictionary["type"] + ";");
+        tw.WriteLine("  value uniform " + geo.UserDictionary["temp"] + ";");
+        tw.WriteLine("}");
+      }
+
+      tw.WriteLine("}");
+
+
+
+      tw.Close();
+
+
+
+
+
+
+
+
+    }
+
+\end{lstlisting}
+
+
+
+
+\end{theappendices}

@@ -1,0 +1,83 @@
+
+\documentclass[12pt]{gatechthesis}
+
+% preamble
+
+\title{3D Heat Transfer Analysis in Architectural Modeling: A Case Study with OpenFOAM}
+\author{Maryam Almaian}
+\approvaldate{April 24, 2024}
+\school{School of Architecture}
+\department{College of Design}
+\degree{Masters of Science} 
+\bibliography{references}
+
+\usepackage{listings}
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\lstset{framextopmargin=50pt}
+
+\usepackage{framed}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+% Define styles for the flowchart
+\tikzstyle{block} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, draw=black, fill=gray!10]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\usepackage{cleveref}
+
+% document body
+\begin{document}
+
+\makeTitlePage{April}{2024}
+\input{approvalPage.tex}
+%\makeEpigraph{I'm not super. Any talents I have, I worked for -- it seems a long time since I thought of myself as a hero.}{Oliver Queen}
+\makeDedication{For my parents, Njoud \& Talal Almaian}
+
+\begin{frontmatter}
+    \input{acknowledgments}
+    \makeTOC
+    \makeListOfTables
+    \makeListOfFigures
+    %\input{abbrevs}
+    \input{summary}
+\end{frontmatter}
+
+\begin{thesisbody}
+    \input{chapters/chapter1}
+    \input{chapters/chapter2}
+    \input{chapters/chapter3}
+    \input{chapters/chapter4}
+    \input{chapters/appendix.tex}
+    \makeBibliography
+    \input{vita}
+\end{thesisbody}
+
+\end{document}
