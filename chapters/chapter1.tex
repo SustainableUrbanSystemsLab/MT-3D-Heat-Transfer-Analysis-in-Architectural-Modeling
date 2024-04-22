@@ -2,14 +2,12 @@
 
 
 
-The capabilities of current software packages are specific to remodeling one wall or section in separate software, rather than integrating it into the design process using design software packages.  \todo{name the software you are talking about. Therm?}
-This requires the user to remodel walls, sections, or entire buildings, depending on the scale of the project and the number of design changes involved.
+The capabilities of current software packages are specific to remodeling one wall or section in separate software, rather than integrating it into the design process using design software packages. Examples of current 2D heat transfer software are THERM and HTFlux where
+the user is required to remodel walls, sections, or entire buildings, depending on the scale of the project and the number of design changes involved.
 
 Traditional building design processes often rely on simplified 2D heat transfer models, which fail to capture the precise thermal interactions that occur in the real world. This limitation affects the accuracy of performance predictions and affects the identification of optimal design solutions for energy efficiency. 
 3D simulations offer a more realistic representation of thermal transfer, accounting for both conduction and convection. 
 Moreover, they hold massive potential for cost reduction and carbon emission mitigation. 
-By accurately predicting thermal loads and optimizing HVAC systems\todo{you are not doing HVAC here, remove that}, designers can minimize energy consumption, thus reducing operational costs for building owners. 
-
 
 
 %The impact of this research is significant on energy efficiency, reduced operational carbon, and possibly reduced embodied carbon by adding the climate zone, and the tool will provide recommendations.
@@ -52,6 +50,46 @@ However, the authors' work is valuable in terms of offering heat transfer simula
 The final research by Zhong et al., 2019 \cite{litrev2} is directly connected to this research workflow of investigating the computational fluid dynamics (CFD) simulation of convective heat transfer but specifically on Japanese vernacular architecture, focusing on "machiya" buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal HVAC assistance. The study aims to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations. Through comparison and evaluation of different RANS models and boundary layer modeling approaches, the researchers identify suitable methods for predicting convective heat transfer coefficients (CHTC) and flow fields. Validation against wind-tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to advancing simulation methodologies for sustainable building design but did not meet the objective of automating the heat transfer workflow to simplify it for the user \cite{litrev2}. 
 
 
+
+\begin{table}[htb]
+    \centering
+    \caption[Heat Transfer Simulation Software]{Summary of heat transfer simulation software, highlighting type, overview, and limitations.}
+    \label{tab:heat_transfer_software}
+    \begin{tabular}{p{2cm}p{1cm}p{5.5cm}p{5.5cm}}    
+        \toprule
+        Software   & Type  & Overview  & Limitations  \\
+        \midrule
+        THERM      & 2D    & THERM uses a 2D analysis method for conduction and radiation heat transfer, employing the finite-element approach to simulate complex geometries.  & Limited to 2D, constraints on modeling complexity, require architects to download additional tools. \cite{THERM} \\
+        
+        HTFLUX     & 2D    & A 2D simulation for heat and water vapor transport, modeling heat and moisture movement and interaction.  & Limited to 2D, requires additional tool downloads. \cite{HTflux} \\
+        
+        ENERGY2D   & 2D    & An interactive multiphysics simulation program that models conduction, convection, and radiation.  & Limited to 2D, requires additional tool downloads. \cite{ener2d} \\
+        
+        HEAT2      & 2D    & A PC-based program designed for 2D transient and steady-state heat transfer.  & Limited to 2D, requires additional tool downloads. \cite{heat2} \\
+        
+        Kelvin     & 2D    & INTEGRATED's 2D/RS thermal analysis tool simulates temperature, heat flux, and temperature gradients through various visualization methods.  & Limited to 2D, requires additional tool downloads. \cite{kelvin} \\
+        
+        Quickfield & 3D    & Analyzes temperature distribution in static and transient heat transfer processes.  & Requires additional tool downloads, limited post-processing options. \cite{quickf} \\
+        
+        Simscale   & 3D    & Models heat transfer in solids through conduction and in fluids through convection.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{simscale} \\
+        
+        COMSOL     & 3D    & Simulates heat transfer by conduction, convection, and radiation.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{COMSOL} \\
+        
+        theseus    & 3D    & Uses the Finite Element Method (FEM) to solve both steady-state and transient analysis.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{thes} \\
+        
+        Physibel   & 3D    & Examines and improves the performance of entire buildings, with 2D/3D building components.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{phys} \\
+        
+        TAITHERM   & 3D    & Thermal simulation software that predicts temperatures using transient or steady-state analysis.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{taitherm} \\
+        
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
 % Heim
 %\citet{Heim2005} presented a two-solution method to simulate a dynamic heat transfer problem with phase change materials (PCM). The objectives of the paper are to provide a comparison between two solutions for specific and latent heat transfer through the building components, which are the effective heat capacity method and the additional heat source method. There are several differences between the two methods, such as, in the effective heat capacity method, the heat capacity is considered a function of the melting and solidification phase change. However, in the additional heat source method, the phase change depends on the temperature of the internal heat gain flux. The study is carried out around the embedded PCM in the building structure to add additional latent heat and increase the thermal capacity of the material. Both methods achieved the objective with a slight difference in the results. However, the author indicates that the numerical models used in the ESP-r require further validation and refinement.  
 
@@ -61,8 +99,8 @@ The final research by Zhong et al., 2019 \cite{litrev2} is directly connected to
 
 
 
-\section{Heat Transfer}
-\todo{needs better name for section}
+\section{Heat Transfer Processes}
+
 
 This thesis presents a simulation based on conductive and convective heat transfer. 
 One may calculate conductive heat transfer using the heat diffusion equation \cite{bergman2011fundamentals}:
@@ -75,7 +113,7 @@ One may calculate conductive heat transfer using the heat diffusion equation \ci
 	\end{equation}
 	
 	
-Here, $x,y,$ and $z$ are the Cartesian coordinates, $\alpha$ is the thermal diffusivity, $\dot{q}$ is energy generation rate per unit volume, and $c_p$ is the specific heat capacity.
+Here, $x,y,$ and $z$ are the Cartesian coordinates, $\alpha$ is the thermal diffusivity, $\dot{q}$ is the energy generation rate per unit volume, and $c_p$ is the specific heat capacity.
  
 To calculate convective heat transfer, the used formula accounts for both advection (the movement of heat with the fluid flow) and diffusion (the spatial variation of temperature): 
 
@@ -83,22 +121,11 @@ To calculate convective heat transfer, the used formula accounts for both advect
     \frac{\partial T}{\partial t} + \mathbf{v} \cdot \nabla T = \alpha \nabla^2 T + \frac{\dot{q}}{k},
 \end{equation}
 
-where $\mathbf{v}$ is the velocity vector of the fluid, $\alpha$ is the thermal diffusivity, $\nabla$ stands for the gradient operator, $\nabla^2$ represents the Laplacian operator, $\dot{q}$ is the energy generation rate per unit volume, and $k$ is the thermal conductivity \cite{bergman2011fundamentals}.
-
-
-\todo{add sentence on conjugate heat transfer approach that tries to offer an approach to solving such problems, see Wikipedia.}
-
-\todo{Add sentences of how this cannot be done by hand due to the nature of the differential equations.}
-
-
-\todo{I would actually talk about the history first, then the equations. I reordered it now.}
-
-
-
+where $\mathbf{v}$ is the velocity vector of the fluid, $\alpha$ is the thermal diffusivity, $\nabla$ stands for the gradient operator, $\nabla^2$ represents the Laplacian operator, $\dot{q}$ is the energy generation rate per unit volume, and $k$ is the thermal conductivity \cite{bergman2011fundamentals}. This project utilizes the conjugate convective heat transfer approach which is the heat transfer of the combination of solids and fluids. Where the solids are solved by the steady-state Laplace equation and the fluid flow is solved by Navier-Stokes equations. Finally, the interfaces are matched to provide temperature distributions and heat flux \cite{Zhao2007}. Thus, performing 3D heat transfer in architectural applications is challenging and can't be solved by hand due to the complexity of the differential equations used.
 
 
 
 \section{Computational Fluid Dynamics}
-The approach this research follows uses OpenFOAM which stands for Open-source Field Operation and Manipulation and is a widely used open-source computational fluid dynamics  (CFD) software package that allows engineers and researchers to simulate fluid flow, heat transfer, and other related phenomena using numerical methods. The project uses CFD to calculate the heat flow gradient in the space.
+The approach this research follows uses OpenFOAM which stands for Open-source Field Operation and Manipulation and is a widely used open-source computational fluid dynamics  (CFD) software package that allows engineers and researchers to simulate fluid flow, heat transfer, and other related phenomena using numerical methods. The project uses CFD to calculate the heat flow gradient in the space. The selected OpenFOAM solver in this project is \textit{chtMultiRegionFoam} which is a solver capable of solving for steady or transient fluid flow with solid heat conduction and conjugate heat transfer between regions, buoyancy effects, turbulence, reactions, and radiation modeling\footnote{Not used in this study.} \cite{cht}. A detailed description of the solver can be found in Chapter 3.
 
-\todo{add section on CHT solver that we are using for this.}
+
