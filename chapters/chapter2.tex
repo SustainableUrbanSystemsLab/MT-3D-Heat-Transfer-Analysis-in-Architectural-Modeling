@@ -29,11 +29,12 @@ So, the heat flux \( q \) is \( 10.93 \, \text{W/m}^2 \).
 
 
 
-\section{Experiment}
-\todo{needs better section title, not just "experiment"}
+\section{Heat Flux Sensors Experiment}
 
 
-This section presents a real-time measurement of the 2D brick wall with a duration of 74 hours\todo{add dates and which building. where did we measure} using U-value and heat flux sensors as shown in \ref{fig:figexp1} \textbf{(a)} and \ref{fig:figexp1} \textbf{(b)}. Then followed by a 2D simulation section where the same experimental design conditions are implemented in HTflux \cite{HTflux} a 2D heat transfer simulation software.
+
+This section presents a real-time measurement of the 2D brick wall in 359D office located in the Hinman building with a duration of 74 hours using U-value and heat flux sensors as shown in \ref{fig:figexp1} \textbf{(a)} and \ref{fig:figexp1} \textbf{(b)}. Then followed by a 2D simulation section where the same experimental design conditions are implemented in HTflux \cite{HTflux} a 2D heat transfer simulation software. The experiment started on 2024-03-14 at 14:24:15 until 2024-03-17 at 15:24:15. 
+
 
 \begin{figure}[htb]
     \centering
@@ -51,7 +52,7 @@ This section presents a real-time measurement of the 2D brick wall with a durati
 
  
 \subsubsection{Experimental Design}
- The  measurement device used was the gSKIN® KIT-2615C (calibrated) U-Value and Heat Flux Measurement Kit from GreenTeg \cite{greenteg} shown in \ref{fig:toolkit}. 
+ Th  measurement device used was the gSKIN® KIT-2615C (calibrated) U-Value and Heat Flux Measurement Kit from GreenTeg  \cite{greenteg} shown in \ref{fig:toolkit} and was purchased by the funding received from The Kendeda microgrant\cite{kendeda}.
  The schematic in \cref{fig:2d2} shows the experimental design setup with the same conditions of k  = 1 ${W/m}^2$ 
 L  = 0.43 m,
 $T_1$ = 25.8 $^\circ \text{C}$, 
@@ -83,7 +84,7 @@ Where k = 1 \text{ W/(m²)}, L (thickness) = 0.43. So, \(U_{\text{calc}}\) = \(U
 \begin{figure}[htb]
      \centering
     \includegraphics[width=1\linewidth]{Figures/Validation}
-     \caption[Experimental Report Plot]{The heat flux results over time.}\todo{needs more detailed caption}
+     \caption[2D Experimental Report Plot]{The line plots represent the sensor's heat flux and Temperature readings. where the points are the OF simulation results.}
    \label{fig:expr}
  \end{figure}
 
@@ -94,15 +95,14 @@ Where k = 1 \text{ W/(m²)}, L (thickness) = 0.43. So, \(U_{\text{calc}}\) = \(U
     \centering
     \begin{tabular}{lrrrrrrr}
         \toprule
-        Time                & T1val\_in & T1sim\_in & T2val\_out & T2sim\_out & Qval & Qsim \\
+        Time                & $T_{1,val,in}$ & $T_{1,sim,in}$ & $T_{2,val,out}$& $T_{2,sim,out}$ & $Q_{val}$ & $Q_{sim}$ \\
         \midrule
-        3/14/2024 16:14 & 298.39    & 298.37    & 302.7     & 302.7     & 17.38 & 17.29 \\
-        3/15/2024 02:14  & 300.76    & 300.768   & 295.51    & 295.6     & 8.99  & 8.36  \\
-        3/16/2024 13:04 & 297.4525  & 297.452   & 293.827   & 293.827   & 12.54 & 12.2  \\
+        3/14/2024 16:14 & 298.3    & 298.3    & 302.7     & 302.7     & 17.3 & 17.2 \\
+        3/15/2024 02:14  & 300.7    & 300.7   & 295.5    & 295.6     & 8.9  & 8.3  \\
+        3/16/2024 13:04 & 297.4  & 297.4   & 293.8   & 293.8   & 12.54 & 12.2  \\
         \bottomrule
     \end{tabular}
-    \todo{make sure to have reasonable significant decimals everywhere. stay consistent.}
-    \todo{Make sure to format variables correctly, such as $T_{1,val,in}$}
+   
 \end{table}
 
 \begin{table}[]
@@ -121,22 +121,11 @@ Where k = 1 \text{ W/(m²)}, L (thickness) = 0.43. So, \(U_{\text{calc}}\) = \(U
 
 
 \begin{figure}[tbh]
-\begin{minipage}{0.47\textwidth}
   \centering
-  \includegraphics[trim=5.6cm 7.5cm 5.3cm 8cm, clip, width=.95\linewidth]{Figures/2dsection2.pdf}
-  \caption*{\textbf{(a)} Experiment setup for the 2D brick wall.}
-\end{minipage}%
-\hspace{0.1\textwidth}
-\begin{minipage}{0.47\textwidth}
-  \centering
-  \includegraphics[trim=5.6cm 7.5cm 5.3cm 8cm, clip, width=.95\linewidth]{Figures/2dsection1.pdf}
-  \caption*{\textbf{(b)} Section of the 2D brick wall}
-\end{minipage}
-\caption{2D Section and Setup}
+  \includegraphics[trim=5.6cm 7.5cm 5.3cm 8cm, clip, width=.7\linewidth]{Figures/2dsection2.pdf}
+\caption[2D Section and Setup]{Experiment setup for the 2D brick wall.}
 \label{fig:2d2}
-\todo{figure a is probably enough here}
 \end{figure}
-
 
 
 
@@ -178,9 +167,8 @@ After successfully finding and ensuring the compliance of the heat flux in the t
   \includegraphics[width=\linewidth]{Figures/2dsim.png} 
   \caption*{\textbf{(b)} The brick wall temperature gradient results from HTFlux}
 \end{minipage}
-\caption{2D HTFlux Boundary conditions and Results}
+\caption{2D HTFlux Boundary conditions and Resulting heat flux of \( 10.91 \, {W/m}^2 \)}
 \label{2dconst}
-\todo{add heat flux you found also in figure caption.}
 \end{figure}
 
 
