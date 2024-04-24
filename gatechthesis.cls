@@ -26,7 +26,7 @@
 \RequirePackage[normalem]{ulem}  % for underlining text
 \RequirePackage{url} % in case explicit URL's are needed
 \RequirePackage{siunitx} % several functions related to expressing units
-\RequirePackage[bookmarks=true,hidelinks]{hyperref} % should be last(ish)
+%\RequirePackage[bookmarks=true,hidelinks]{hyperref} % should be last(ish)
 \RequirePackage{bookmark} % allows reformatting of pdf bookmarks
 \RequirePackage{caption} % captions for figures
 \RequirePackage{subcaption} % allows subfigures in a reasonable way, plays nice with caption
@@ -322,6 +322,20 @@ Date approved: \@approvaldate
 \clearpage
 }
 
+% ------------------ List of Figures ------------------
+\newcommand{\makeListOfCodeSnippets}{
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Code Snippets}
+\begin{singlespace}
+\setlength\cftbeforefigskip{\baselineskip}  % manually set spacing between entries
+\lstlistoflistings
+\end{singlespace}
+\clearpage
+}
+
+
+
+
 % ------------------ List of Acronyms ------------------
 \newcommand{\makeListOfAcronyms}{
 \phantomsection
@@ -381,11 +395,9 @@ Date approved: \@approvaldate
 \AtEveryBibitem{\clearlist{language}}
 \AtEveryBibitem{\clearfield{doi}}
 \AtEveryBibitem{\clearlist{doi}}
-\AtEveryBibitem{\clearfield{url}}
+%\AtEveryBibitem{\clearfield{url}}
 \AtEveryBibitem{\clearlist{url}}
-\AtEveryBibitem{%
-\ifentrytype{online}{}
-    {\clearfield{urlyear}\clearfield{urlmonth}\clearfield{urlday}}}
+%\AtEveryBibitem{\ifentrytype{online}{}{\clearfield{urlyear}\clearfield{urlmonth}\clearfield{urlday}}}
 
 \newcommand{\makeBibliography}{
     \clearpage

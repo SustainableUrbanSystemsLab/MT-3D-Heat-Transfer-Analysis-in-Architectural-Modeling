@@ -10,42 +10,31 @@
 \degree{Masters of Science} 
 \bibliography{references}
 
+\usepackage{xcolor} %custom colours
 
 
-\usepackage{listings}
-\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
 
 
+\usepackage{enumitem}
 \usepackage{framed}
+\usepackage{mdframed} %nice frames
+
+\makeatletter
+\renewenvironment{framed}{%
+ \def\FrameCommand##1{\hskip\@totalleftmargin
+ \fboxsep=\FrameSep\fbox{##1}
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed}
+\makeatother
+
 
 \usepackage{easy-todo}
 
 
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
-}
-
-\lstset{style=mystyle}
 
 
 \usepackage{tikz}
@@ -56,6 +45,37 @@
 
 
 \usepackage{cleveref}
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Code} % adjusts Listings caption and reference lst
+\renewcommand{\lstlistlistingname}{List of Code Snippets}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{light-gray}{gray}{0.97} %the shade of grey that stack exchange uses
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{light-gray},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=t,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 % document body
 \begin{document}
@@ -70,19 +90,26 @@
     \makeTOC
     \makeListOfTables
     \makeListOfFigures
-    %\input{abbrevs}
+    \makeListOfCodeSnippets
+    \input{abbrevs}
     \input{summary}
 \end{frontmatter}
 
 \begin{thesisbody}
+    \glsresetall
 	\input{chapters/chapter0}
+    \glsresetall
     \input{chapters/chapter1}
+    \glsresetall
     \input{chapters/chapter2}
+    \glsresetall
     \input{chapters/chapter3}
+    \glsresetall
     \input{chapters/chapter4}
+    \glsresetall
     \input{chapters/appendix.tex}
     \makeBibliography
-    \input{vita}
+    \todo{please fix references. "heat2", ort "kelvin" is not a meaningful reference.}
 \end{thesisbody}
 
 \end{document}

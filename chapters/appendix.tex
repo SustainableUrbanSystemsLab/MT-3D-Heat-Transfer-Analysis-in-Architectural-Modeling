@@ -13,7 +13,8 @@
 
 \begin{framed}
     
-
+\small
+\setlist[itemize]{leftmargin=3.5mm}
 \begin{itemize}
     \setlength\itemsep{-0.2em}
     \item \textbf{Product:} gSKIN® KIT-2615C (calibrated)
@@ -31,8 +32,8 @@
     \end{itemize}
     \item \textbf{Temperature Accuracy [°C]:}
     \begin{itemize}
-        \item ±0.5 (-10...+46 °C)
-        \item ±2.0 (-55...+125 °C)
+        \item ±0.5 (-10…+46 °C)
+        \item ±2.0 (-55…+125 °C)
     \end{itemize}
     
     \item \textbf{Min. Sensor Sensitivity} 
@@ -62,17 +63,17 @@
 \end{table}
 
 
-
+\footnotesize
 \singlespacing
 \chapter{T File 0 Example}
-\begin{lstlisting}[language=c++, caption=OF text file in 0/Brick/T]
-/*--------------------------------*- C++ -*----------------------------------*\
-| =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  2306                                  |
-|   \\  /    A nd           | Website:  www.openfoam.com                      |
-|    \\/     M anipulation  |                                                 |
-\*---------------------------------------------------------------------------*/
+\begin{lstlisting}[language=c++, caption=OF dictiorary in 0/Brick/T]
+/*-------------------*- C++ -*----------------------------------*\
+| =========    |                                                 |
+| \\      /  F | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O | Version:  2306                                  |
+|   \\  /    A | Website:  www.openfoam.com                      |
+|    \\/     M |                                                 |
+\*--------------------------------------------------------------*/
 FoamFile
 {
     version     2.0;
@@ -82,24 +83,24 @@ FoamFile
     location    "0/";
     object      T;
 }
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [ 0 0 0 1 0 0 0 ];
+dimensions      [0 0 0 1 0 0 0];
 
 internalField   uniform 270;
-
 
 boundaryField
 {
 Brick_to_Brick
 {
-            type          compressible::turbulentTemperatureRadCoupledMixed;
+            type compressible::turbulentTemperatureRadCoupledMixed;
             value  uniform 273;
             Tnbr T;
             K solidThermo;
             kappaMethod solidThermo;
             
 }
+...
 \end{lstlisting}
 
 
@@ -107,14 +108,14 @@ Brick_to_Brick
 
 \singlespacing
 \chapter{File Constant Example}
-\begin{lstlisting}[language=c++, caption=OF text file in constant/Brick/thermophysicalproperties]
-/*--------------------------------*- C++ -*----------------------------------*\
-| =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v2306                                 |
-|   \\  /    A nd           | Website:  www.openfoam.com                      |
-|    \\/     M anipulation  |                                                 |
-\*---------------------------------------------------------------------------*/
+\begin{lstlisting}[language=c++, caption=OF dictiorary in constant/Brick/thermophysicalproperties]
+/*-------------------*- C++ -*----------------------------------*\
+| =========    |                                                 |
+| \\      /  F | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O | Version:  2306                                  |
+|   \\  /    A | Website:  www.openfoam.com                      |
+|    \\/     M |                                                 |
+\*--------------------------------------------------------------*/
 FoamFile
 {
     version     2.0;
@@ -122,8 +123,7 @@ FoamFile
     class       dictionary;
     object      thermophysicalProperties;
 }
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 thermoType
 {
     type            heSolidThermo;
@@ -134,7 +134,6 @@ thermoType
     specie          specie;
     energy          sensibleEnthalpy;
   }
-
 mixture
 {
     specie
@@ -155,9 +154,7 @@ mixture
         rho     1600;
     }
 }
-
-
-// ************************************************************************* //
+// *********************************************************** //
 \end{lstlisting}
 
 
@@ -167,14 +164,14 @@ mixture
 
 \singlespacing
 \chapter{File System Example}
-\begin{lstlisting}[language=c++, caption=OF text file in System/Brick/fvsolution]
-/*--------------------------------*- C++ -*----------------------------------*\
-| =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v2306                                 |
-|   \\  /    A nd           | Website:  www.openfoam.com                      |
-|    \\/     M anipulation  |                                                 |
-\*---------------------------------------------------------------------------*/
+\begin{lstlisting}[language=c++, caption=OF dictiorary in System/Brick/fvsolution]
+/*-------------------*- C++ -*----------------------------------*\
+| =========    |                                                 |
+| \\      /  F | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O | Version:  2306                                  |
+|   \\  /    A | Website:  www.openfoam.com                      |
+|    \\/     M |                                                 |
+\*--------------------------------------------------------------*/
 FoamFile
 {
     version     2.0;
@@ -182,7 +179,7 @@ FoamFile
     class       dictionary;
     object      fvSolution;
 }
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 solvers
 {
@@ -216,83 +213,15 @@ solvers
 
 \singlespacing
 \chapter{Write T File Example}
-\begin{lstlisting}[language=c++, caption= Code in GH to write OF text file in 0/Brick/T]
-  String directoryPath = path + @"\0\";
 
-    if (!Directory.Exists(directoryPath))
-    {
-      Directory.CreateDirectory(directoryPath);
-    }
+We used a mesh user dictionary approach to build the geometry pipeline within Grasshopper.
 
-
-    String filePath = directoryPath + @"\" + fileName;
-
-
-    A = filePath;
-
-
-
-    File.Delete(filePath);
-
-    using(var tw = new StreamWriter(filePath)) // new StreamWriter(path, true) for append
-    {
-      tw.WriteLine(head);
-      tw.WriteLine(data);
-
-
-
-
-      tw.WriteLine("boundaryField");
-      tw.WriteLine("{");
-      foreach (Mesh  m in zoneNames)
-      {
-        //tw.WriteLine(str);
-        //tw.WriteLine("{");
-        tw.WriteLine(m.UserDictionary["name"]);
-        tw.WriteLine("{");
-        tw.WriteLine("  type " + m.UserDictionary["type"] + ";");
-        tw.WriteLine("  value uniform " + m.UserDictionary["temp"] + ";");
-        tw.WriteLine("}");
-        //tw.WriteLine("}");
-      }
-      foreach (GeometryBase geo in bMBoundaries)
-      {
-        tw.WriteLine(geo.UserDictionary["name"]);
-        tw.WriteLine("{");
-        tw.WriteLine("  type " + geo.UserDictionary["type"] + ";");
-        tw.WriteLine("  value uniform " + geo.UserDictionary["temp"] + ";");
-        tw.WriteLine("}");
-      }
-
-      foreach (GeometryBase geo in actualBoundaries)
-      {
-        tw.WriteLine(geo.UserDictionary["name"]);
-        tw.WriteLine("{");
-        tw.WriteLine("  type " + geo.UserDictionary["type"] + ";");
-        tw.WriteLine("  value uniform " + geo.UserDictionary["temp"] + ";");
-        tw.WriteLine("}");
-        tw.WriteLine(geo.UserDictionary["name"].ToString().Split(new string[] { "_to_" }, StringSplitOptions.None)[1] + "_to_" + geo.UserDictionary["name"].ToString().Split(new string[] { "_to_" }, StringSplitOptions.None)[0]);
-        tw.WriteLine("{");
-        tw.WriteLine("  type " + geo.UserDictionary["type"] + ";");
-        tw.WriteLine("  value uniform " + geo.UserDictionary["temp"] + ";");
-        tw.WriteLine("}");
-      }
-
-      tw.WriteLine("}");
-
-
-
-      tw.Close();
-
-
-
-
-
-
-
-
-    }
-
+\begin{lstlisting}[language=c++, caption= Code to handle OF dictionary in 0/Brick/T]
+...
+m.UserDictionary["name"]);
+m.UserDictionary["type"]);
+m.UserDictionary["temp"]);
+...
 \end{lstlisting}
 
 
@@ -301,7 +230,7 @@ solvers
 
 
 
-
+\normalsize
 \singlespacing
 \chapter{Specific Heat Capacity Solution (Brick Example)}
 \begin{equation}
@@ -326,7 +255,7 @@ C_p &= 1060 \, \text{J/kg.K}
 \end{aligned}
 \label{appendcp}
 \end{equation}
-\todo{add this to the appendix and refer to it in the text.}
+
 
 
 

@@ -1,21 +1,74 @@
 %!TEX root = ../thesis.tex
 \chapter{Introduction and Background}
+This chapter provides a detailed overview of the thesis, focusing on the problem and the motivation for undertaking this research. It highlights the focus of this project and outlines the research aim, objective, and relevance in practice.
+
 Architects and engineers refer to ASHRAE standards to comply with the minimum required insulation based on the location of a project. 
 In adhering to these standards, there is the potential to optimize the selection of materials toward lower energy demand and to increase thermal comfort. 
 However, modeling 3D heat transfer for applications in buildings is a complex and long process for modelers due to the lack of available free software. 
 
-This thesis aims to bridge the gap between providing architects with easy-to-use 3D heat transfer software that is integrated into architect design software, such as \textit{Rhino\, \&\, Grasshopper}. Here, we used \textit{OpenFOAM (OF) / Grasshopper} to construct an envelope segment from \textit{ISO 10211:2007}
+This thesis aims to bridge the gap between providing architects with easy-to-use 3D heat transfer software that is integrated into architect design software, such as \textit{Rhino\, \&\, \gls{GH}}. Here, we used \textit{\gls{OF} / \gls{GH}} to construct an envelope segment from \textit{ISO 10211:2007}
 \cite{ISO}, then calculate heat transfer, and assess whether the validated case complies with our results. 
 
 
 
-\subsubsection{Problem Statement}
-Current software and simulation tools in the architectural field are limited;2dheat, etc
+\section{Problem Statement}
+Simulating 3D heat transfer is challenging due to the complexity of the differential equations as a result of the heat movement in 3D spaces. This complexity creates obstacles in achieving accurate simulations, which are critical in several applications. In the architectural field, the importance of 3D heat transfer simulations is significant to analyze thermal comfort and thermal behavior on materials. The 3D simulation also has a direct impact on building design, affecting everything from the building envelope to material choices and even the comfort and safety of occupants. The simulation also offers a detailed description of the modeled state, where thermal bridges and complex geometries are represented in a precise way.
+However, existing software and simulation tools in architecture are generally limited to 2D heat transfer simulations, which cannot fully show the complexities represented in 3D thermal dynamics. Tools such as HEAT2, HTFlux, and THERM, which are widely used in the industry, provide only a partial view of the thermal environment, leading to potential inaccuracies in architectural planning or retrofitting.
+
+Due to these limitations, the research question is the following: What approaches can be used to design and validate a tool that simulates 3D heat transfer in architectural contexts? How can this tool be seamlessly integrated into existing architectural modeling software? These questions aim to bridge the gap in current simulation technology by investigating the creation of a more advanced and reliable 3D simulation solution for architectural projects.
+
+\section{Research Hypotheses}
+This research is centered on the following hypotheses.
+The development and validation of an integrated 3D heat transfer workflow to reduce errors in architectural thermal analysis, offering an easier approach to architectural decision-making.
+
+\subsection{Feasibility}
+\todo{reword}
+\begin{itemize}
+    \item 3D steady and transient state heat transfer can be simulated using \gls{OF} solvers, and validated via ISO cases and real-world measurements.
+    \item Using Rhino and \gls{GH} to connect \gls{OF} with the architectural modeling processes. 
+\end{itemize}
+
+\subsection{Justifiable Effort}
+\todo{reword}
+\begin{itemize}
+    \item The architectural field lacks the workflows to simulate 3D heat transfer. \todo{not true, say what it exactly lacks.} The automation of writing the OF text files reduces tremendous effort and time
+    \item This workflow is open-source, allowing architects to model, run, and iterate simulations without any cost, providing feedback at every stage of design or retrofitting.
+
+    \item Eliminates the need to download additional software, rebuild models, reassign materials, or wait for feedback from a separate department.
+\end{itemize}
+
+\subsection{Relevance in Practice}
+\todo{reword}
+\begin{itemize}
+\item This seamless workflow contributes to design optimizations, reducing carbon emissions from both operations and construction materials.
+\item Lead to improved thermal performance and improved comfort for occupants.
+\item No software costs, reduced project expenses.
+\item Eliminates the need for multiple tools, reducing complexity and time delays.
+\item Real-time feedback to improve design outcomes
+\item The Open-source tool is accessible and motivates and encourages any designer to reduce operational and embodied carbon.
+\todo{max 3 bullets here}
+
+\end{itemize}
+\section{Research Aim \& Objectives}
+\subsection{Research Aim}
+The research aim focuses on developing and validating a comprehensive 3D heat transfer simulation tool integrated into architectural modeling processes. To achieve this goal, the following objectives are met.
+
+\subsection{Research Objectives}
+\begin{itemize}
+    \item Identify validation Case Study.
+    \item Integrate Rhino and automate \gls{GH}. 
+    \item Develop 3D heat transfer simulation using \gls{OF}.
+    \item validate the 3D simulation results.
+    \item Test the workflow by implementing real-time heat flux sensor reading.
+    \todo{this is a bit all over the place. Please consolidate}
+\end{itemize}
 
 
-Research question
-How do we build and validate a tool that can simulate 3D heat transfer?
-
-
-
-\todo{You need a section here that describes the problem statement AND the research questions your thesis answers. Please check my PhD thesis or masters thesis for an example of how to do this.}
+\section{Thesis Outline}
+This thesis is structured as follows:
+\begin{itemize}
+    \item \textit{Chapter 2} Showcases the history of heat transfer in buildings, literature review, heat transfer processes, and computational fluid dynamics.
+     \item \textit{Chapter 3} illustrates three approaches to finding the heat flux of a brick wall; manual calculation, sensor reading, and 2D heat transfer simulation. These approaches are presented to highlight the shortcomings of current resources. 
+      \item \textit{Chapter 4} Focuses on the methodology of the 3D heat transfer workflow, identifying an appropriate validation case study, and discusses the solver and process in detail.
+       \item \textit{Chapter 5} Revisits the thesis hypotheses and provides an outlook with suggestions for an expansion of this project.
+\end{itemize}
