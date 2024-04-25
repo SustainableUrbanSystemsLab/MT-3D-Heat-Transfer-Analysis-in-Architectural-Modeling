@@ -2,7 +2,7 @@
 
 
 
-The capabilities of current software packages are specific to remodeling one wall or section in separate software, rather than integrating it into the design process using design software packages. Examples of current 2D heat transfer software are THERM and HTFlux where
+The capabilities of current software packages are specific to remodeling one wall or section in separate software, rather than integrating it into the design process using design software packages. Examples of current 2D heat transfer software are THERM and HTFlux, where
 the user is required to remodel walls, sections, or entire buildings, depending on the scale of the project and the number of design changes involved.
 
 Traditional building design processes often rely on simplified 2D heat transfer models, which fail to capture the precise thermal interactions that occur in the real world. This limitation affects the accuracy of performance predictions and affects the identification of optimal design solutions for energy efficiency. 
@@ -51,40 +51,105 @@ The final research by Zhong et al., 2019 \cite{litrev2} is directly connected to
 
 
 
-\begin{table}[htb]
+%{\begin{landscape}
+
+
+
+
+%\begin{table}[htb]
+    % \centering
+    %\footnotesize
+    %\caption[Heat Transfer Simulation Software]{Summary of heat transfer simulation software, highlighting type, overview, and limitations.}
+   % \label{tab:heat_transfer_software}
+    %\begin{tabular}{p{2cm}p{0.75cm}p{8.0cm}p{8.0cm}}    
+      %  \toprule
+      %  Software   & Type  & Overview  & Limitations  \\
+       % \midrule
+       % THERM      & 2D    & THERM uses a 2D analysis method for conduction and radiation heat transfer, employing the finite-element approach to simulate complex geometries.  & Limited to 2D, constraints on modeling complexity, require architects to download additional tools. \cite{THERM} \\
+        
+       % HTFLUX     & 2D    & A 2D simulation for heat and water vapor transport, modeling heat and moisture movement and interaction.  & Limited to 2D, requires additional tool downloads. \cite{HTflux} \\
+        
+       % ENERGY2D   & 2D    & An interactive multiphysics simulation program that models conduction, convection, and radiation.  & Limited to 2D, requires additional tool downloads. \cite{ener2d} \\
+        
+       % HEAT2      & 2D    & A PC-based program designed for 2D transient and steady-state heat transfer.  & Limited to 2D, requires additional tool downloads. \cite{heat2} \\
+        
+       % Kelvin     & 2D    & INTEGRATED's 2D/RS thermal analysis tool simulates temperature, heat flux, and temperature gradients through various visualization methods.  & Limited to 2D, requires additional tool downloads. \cite{kelvin} \\
+        
+        %Quickfield & 3D    & Analyzes temperature distribution in static and transient heat transfer processes.  & Requires additional tool downloads, limited post-processing options. \cite{quickf} \\
+        
+       % Simscale   & 3D    & Models heat transfer in solids through conduction and in fluids through convection.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{simscale} \\
+        
+      %  COMSOL     & 3D    & Simulates heat transfer by conduction, convection, and radiation.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{COMSOL} \\
+        
+      %  theseus    & 3D    & Uses the Finite Element Method (FEM) to solve both steady-state and transient analysis.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{thes} \\
+        
+       % Physibel   & 3D    & Examines and improves the performance of entire buildings, with 2D/3D building components.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{phys} \\
+        
+      %  TAITHERM   & 3D    & Thermal simulation software that predicts temperatures using transient or steady-state analysis.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{taitherm} \\
+        
+      %  \bottomrule
+   % \end{tabular}
+   % \todo{I think this is amazing and really critical for your work, as mentioned by comments after your presentation today. Can we add more columns to this and make this more like this? https://creately.com/usage/competitive-analysis-template/}
+
+%\end{table}
+
+%\end{landscape}}
+
+
+
+\begin{landscape}
+    
+
+
+ \begin{table}[htb]
     \centering
     \footnotesize
-    \caption[Heat Transfer Simulation Software]{Summary of heat transfer simulation software, highlighting type, overview, and limitations.}
+    \caption{Heat Transfer Simulation Software Overview}
     \label{tab:heat_transfer_software}
-    \begin{tabular}{p{2cm}p{0.75cm}p{5.0cm}p{5.0cm}}    
+    %\resizebox{\textwidth}{!}
+    %{
+    \begin{tabular}{lcp{5cm}lp{1cm}p{1cm}p{1.5cm}p{1cm}p{6cm}} 
         \toprule
-        Software   & Type  & Overview  & Limitations  \\
+        Software & Type & Overview & Price & Rhino / Revit & Ease of Use & Complex Geometry & Export PV & Limitations \\
         \midrule
-        THERM      & 2D    & THERM uses a 2D analysis method for conduction and radiation heat transfer, employing the finite-element approach to simulate complex geometries.  & Limited to 2D, constraints on modeling complexity, require architects to download additional tools. \cite{THERM} \\
-        
-        HTFLUX     & 2D    & A 2D simulation for heat and water vapor transport, modeling heat and moisture movement and interaction.  & Limited to 2D, requires additional tool downloads. \cite{HTflux} \\
-        
-        ENERGY2D   & 2D    & An interactive multiphysics simulation program that models conduction, convection, and radiation.  & Limited to 2D, requires additional tool downloads. \cite{ener2d} \\
-        
-        HEAT2      & 2D    & A PC-based program designed for 2D transient and steady-state heat transfer.  & Limited to 2D, requires additional tool downloads. \cite{heat2} \\
-        
-        Kelvin     & 2D    & INTEGRATED's 2D/RS thermal analysis tool simulates temperature, heat flux, and temperature gradients through various visualization methods.  & Limited to 2D, requires additional tool downloads. \cite{kelvin} \\
-        
-        Quickfield & 3D    & Analyzes temperature distribution in static and transient heat transfer processes.  & Requires additional tool downloads, limited post-processing options. \cite{quickf} \\
-        
-        Simscale   & 3D    & Models heat transfer in solids through conduction and in fluids through convection.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{simscale} \\
-        
-        COMSOL     & 3D    & Simulates heat transfer by conduction, convection, and radiation.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{COMSOL} \\
-        
-        theseus    & 3D    & Uses the Finite Element Method (FEM) to solve both steady-state and transient analysis.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{thes} \\
-        
-        Physibel   & 3D    & Examines and improves the performance of entire buildings, with 2D/3D building components.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{phys} \\
-        
-        TAITHERM   & 3D    & Thermal simulation software that predicts temperatures using transient or steady-state analysis.  & Cost-prohibitive, requires additional tool downloads, limited post-processing options. \cite{taitherm} \\
-        
+        THERM     & 2D & Finite-element approach for complex geometries & \$0 & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Limited to 2D, requires additional tools. \\
+
+        HTFLUX    & 2D & Heat and water vapor transport simulation & \$421/yr & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Requires additional tool downloads. \\
+
+        ENERGY2D  & 2D & Multiphysics program for conduction, convection, and radiation & \$0 & \ding{55} & \ding{55} & \ding{55} & \ding{55} & No user interface. Requires additional tool downloads. \\
+
+        HEAT2     & 2D & Transient and steady-state heat transfer & \$800/yr & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Requires additional tool downloads. \\
+
+        Kelvin    & 2D & Temperature, heat flux, and gradient simulation & NA & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Requires additional tool downloads. \\
+
+        Quickfield & 3D & Static and transient heat transfer analysis & Node-based & \ding{55} & \ding{51} & \ding{51} & \ding{55} & Limited post-processing, additional tools. \\
+
+        Simscale  & 3D & Models heat transfer in solids and fluids through convection & Core-based & \ding{55} & \ding{55} & \ding{51} & \ding{55} & Cost-prohibitive, limited post-processing. \\
+
+        COMSOL    & 3D & Heat transfer by conduction, convection, and radiation & \$4000 & \ding{55} & \ding{55} & \ding{51} & \ding{55} & Cost-prohibitive, requires additional tools. \\
+
+        theseus   & 3D & FEM for steady-state and transient analysis & NA & \ding{55} & \ding{51} & \ding{51} & \ding{51} & Limited post-processing, cost-prohibitive. \\
+
+        Physibel (S)  & 3D & Examines entire buildings with 2D/3D components & \$2,359/yr & \ding{55} & \ding{55} & \ding{51} & \ding{55} & Cost-prohibitive, limited post-processing. \\
+
+        TAITHERM  & 3D & Simulates transient or steady-state heat transfer & NA & \ding{55} & \ding{51} & \ding{51} & \ding{55} & Cost-prohibitive, limited post-processing. \\
+
         \bottomrule
     \end{tabular}
+    %}
 \end{table}
+
+
+\end{landscape}
+
+
+
+
+
+
+
+
+
 
 
 
