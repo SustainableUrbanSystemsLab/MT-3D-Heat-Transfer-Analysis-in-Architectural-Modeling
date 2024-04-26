@@ -2,7 +2,7 @@
 \chapter{Introduction and Background}
 This chapter provides a detailed overview of the thesis, focusing on the problem and the motivation for undertaking this research. It highlights the focus of this project and outlines the research aim, objective, and relevance in practice.
 
-Architects and engineers refer to ASHRAE standards to comply with the minimum required insulation based on the location of a project. 
+Architects and engineers refer to \gls{ASHRAE} standards to comply with the minimum required insulation based on the location of a project. 
 In adhering to these standards, there is the potential to optimize the selection of materials toward lower energy demand and to increase thermal comfort. 
 However, modeling 3D heat transfer for applications in buildings is a complex and long process for modelers due to the lack of available free software. 
 
@@ -21,15 +21,15 @@ Due to these limitations, the research question is the following: What approache
 This research is centered on the following hypotheses.
 The development and validation of an integrated 3D heat transfer workflow to reduce errors in architectural thermal analysis, offering an easier approach to architectural decision-making.
 
-\subsection{Practicality Check}
+\subsection{Applied Relevance}
 \begin{itemize}
-    \item 3D steady and transient state heat transfer can be simulated using \gls{OF} solvers, and validated via ISO cases and real-world measurements.
-    \item Using Rhino and \gls{GH} to connect \gls{OF} with the architectural modeling processes. 
+    \item The capacity to simulate both steady-state and transient heat transfer in \gls{3D} using \gls{OF} is crucial for accurate modeling in architectural contexts. The simulations are validated with \gls{ISO} and experimental design data, to ensure reliability in the results.
+    \item Integrating OpenFOAM with Rhino and \gls{GH} facilitates the inclusion of \gls{CFD} into architectural modeling. This connection simplifies workflows, making it easier for architects to incorporate complex heat transfer analyses into their design processes.
 \end{itemize}
 
 \subsection{Functional Benefits}
 \begin{itemize}
-    \item The architectural field lacks the workflows directly integrated into the architectural modeling software and is cost-efficient to simulate 3D heat transfer.
+    \item The architectural field lacks the workflows directly integrated into the architectural modeling software and is cost-efficient to simulate \gls{3D} heat transfer.
     \item The automation of writing the OF text files reduces tremendous effort and time
     \item This workflow is open-source, allowing architects to model, run, and iterate simulations without any cost, providing feedback at every stage of design or retrofitting.
 
@@ -68,7 +68,7 @@ The main objective of the research is to develop and validate a comprehensive 3D
 This thesis is structured as follows:
 \begin{itemize}
     \item \textit{Chapter 2} Showcases the history of heat transfer in buildings, literature review, heat transfer processes, and computational fluid dynamics.
-     \item \textit{Chapter 3} illustrates three approaches to finding the heat flux of a brick wall; manual calculation, sensor reading, and 2D heat transfer simulation. These approaches are presented to highlight the shortcomings of current resources. 
-      \item \textit{Chapter 4} Focuses on the methodology of the 3D heat transfer workflow, identifies an appropriate validation case study, and discusses the solver and process in detail.
-       \item \textit{Chapter 5} Revisits the thesis hypotheses and provides an outlook with suggestions for an expansion of this project.
+    \item \textit{Chapter 3} illustrates three approaches to finding the heat flux of a brick wall; manual calculation, sensor reading, and 2D heat transfer simulation. These approaches are presented to highlight the shortcomings of current resources. 
+    \item \textit{Chapter 4} Focuses on the methodology of the 3D heat transfer workflow, identifies an appropriate validation case study, and discusses the solver and process in detail.
+    \item \textit{Chapter 5} Ensure objectives compliance and provide an outlook with suggestions for an expansion of this project.
 \end{itemize}
