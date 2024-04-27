@@ -13,7 +13,7 @@ This chapter showcases the workflow to build a 3D heat transfer approach integra
 
 
    
-\begin{figure}[H]
+\begin{figure}[h!]
      \centering
     \includegraphics[trim=2.7cm 1.7cm 2.7cm 1.5cm, clip, width=0.7\linewidth]{Figures/flowchartv.pdf}
      \caption[Simulation Flowchart]{Flowchart of simulation steps starting from pre-processing to the post-processing of the simulation.}
@@ -31,7 +31,7 @@ The first step in the methodology is to select a 3D validation case study to mod
 
 \section{Validation Case Study}
 The simulation's methodology starts with finding a validation case. The selected case is sourced from The International Organization for Standardization (ISO) \cite{ISO}. The case study is a validated 3D heat transfer case documented in \textit{ISO 10211:2007}\footnote{ISO 10211:2007---Thermal bridges in building construction. Validation of case A.3 \cite{ISO}}. 
-The geometry consists of two levels: a first floor and a second floor, separated by a floor slab and a plaster floor. The  walls are composed of aerated concrete, insulation material, and brick.
+The geometry consists of two levels: a first floor and a second floor, separated by a floor slab and a plaster floor. The walls are composed of aerated concrete, insulation material, and brick.
 A description of each material in the geometry can be found in \ref{fig:validation-case-materials} \textbf{(a)}.
 
 %One of the challenges we faced was retrieving this case study due to the lack of availability of validated 3D and not 2D heat transfer cases that incorporate building materials. 
@@ -40,7 +40,7 @@ Beyond \textit{ISO 10211:2007}, it is also documented in the \textit{QuickField}
    
 
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \begin{minipage}[t]{0.54\columnwidth}
         \centering
@@ -82,7 +82,7 @@ This subsection explains the Grasshopper script that automatically creates and e
 The component shown in \ref{matgh} is a dictionary for the material connected to specific geometry. Each different zone in Rhino needs to be connected to the shown component by adding the corresponding specifications for the material such as name, type, temperature, specific heat capacity, thermal conductivity, and density. This component is considered the base and many other sections in the script depend on it, such as writing the other text files in 0 files where the boundary conditions are needed or writing the constant and system files. 
 
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[trim=5cm 32cm 4.5cm 7cm, clip, width=0.55\linewidth]{Figures/THESISGH2.pdf}
 \hspace{0.7cm}
@@ -185,7 +185,6 @@ The pre-processing phase consists of dividing the geometry into different zones 
     
     \caption[3D Validation Mesh and Mesh Statistics]{\textbf{(a)} \gls{OF} mesh viewed in ParaView without air regions. \textbf{(b)}  Validation case mesh statistics retrieved from ISO 10211:2007 (E) \cite{ISO}.}
     \label{fig:validation-case}
-    \todo{make sure all a, b captions have this consistant order. currently they dont.}
 \end{figure}
 
 
@@ -398,12 +397,11 @@ The meshes are created based on the specifications outlined in a dictionary file
      \caption[Mesh Creation Steps]{Visualization of the steps and executables to create the mesh step-by-step}
    \label{meshsteps}
  \end{figure}
-\todo{is there any way you can combine figure 4.1 and 4.9, into an a), and b) figure? Would it make sense?}
 
 
 %\clearpage
 \subsection{Post-processing}
-After running the simulation until convergence, multiple text files of $T$, $P$, and $U$ are solved for each region. There are two methods to post-process and visualize the resulting data. The first method is using \textit{Paraview} to visualize the outcome and process the results. The second method is \textit{\gls{OF}}'s post-process command, first, select the probing locations using0 \gls{GH} automation components to automatically write the post-processing file and measure the data, then plot the data to compare the validation case temperatures with our results. 
+After running the simulation until convergence, multiple text files of $T$, $P$, and $U$ are solved for each region. There are two methods to post-process and visualize the resulting data. The first method is using \textit{Paraview} to visualize the outcome and process the results. The second method is \textit{\gls{OF}}'s post-process command, first, select the probing locations using \gls{GH} automation components to automatically write the post-processing file and measure the data, then plot the data to compare the validation case temperatures with our results. 
 
 
 
@@ -412,7 +410,7 @@ After running the simulation until convergence, multiple text files of $T$, $P$,
 
 This section discusses the results of key experimental results of our ongoing research. 
 \cref{paraview} \textbf{(a)} visualizes the simulation temperature output, including the air (fluid) regions. Whereas
-\cref{paraview} \textbf{(b)} shows the geometry excluding air, which represents the temperature distributions. The resulting temperatures are shown in the plot in \cref{fig:validation-plots}. The plot includes the \textit{QuickField} outputs and our  \gls{OF} simulation along the z-axis from $z= 1.2$ to $z=2.2$ (the red line shown in \cref{paraview} \textbf{(a)}) and represents non-linear progression as a result of the different specific heat capacities and thermal conductivity of the materials. The peak in z=1.8 refers to the temperature of the slab, where it can be modified by readjusting the slab model and re-simulating. 
+\cref{paraview} \textbf{(b)} shows the geometry excluding air, which represents the temperature distributions. The resulting temperatures are shown in the plot in \cref{fig:validation-plots}. The plot includes the \textit{QuickField} outputs and our  \gls{OF} simulation along the z-axis from $z= 1.2$ to $z=2.2$ (the red line shown in \cref{paraview} \textbf{(a)}) and represents non-linear progression as a result of the different specific heat capacities and thermal conductivity of the materials. The peak in z=1.8 refers to the temperature of the slab, which can be modified by readjusting the slab model and re-simulating it. 
 
 
 
@@ -473,7 +471,7 @@ While this adjustment slightly reduced the thermal bridge's impact, it also intr
 
 Since these results do not fully consider the effect of thermal breakers between the exterior and interior sections, the following solutions may address the problem. The first suggested solution is to adjust the slab to have non-uniform initial conditions. This can be achieved by creating a setFieldsDict file in the system folder. By using setFieldsDict, you can specify different initial temperatures for the exterior and interior sections of the slab, leading to a more accurate representation of the heat transfer. Another possible solution is to remodel the geometry and divide the slab into two distinct regions. This approach allows for better control over the thermal distribution and potentially improves accuracy in the simulation results.
 
-Both of these solutions aim to correct the inconsistencies caused by incorrect boundary conditions and thermal bridging effects, leading more accurate results in the 3D validation case.
+Both of these solutions aim to correct the inconsistencies caused by incorrect boundary conditions and thermal bridging effects, leading to more accurate results in the 3D validation case.
 
 \subsection{Experimental Design}
 In the experimental design section of this thesis, U-value and heat flux sensors were used to log the temperatures and heat flux for a brick wall for 74 hours. The results were documented in 10-second increments throughout the three days. To validate the results of the experiment with the simulation \gls{OF}, three time steps were chosen from the experimental results to be simulated in three separate steady state heat transfer cases shown in \ref{table2d}, \ref{error2d}, and \ref{fig:expr}. However, the experiment can be easily validated by setting up one transient heat transfer case using the same \textit{chtMultiRegionFoam} solver. To leverage the solver's transient state capabilities, a time-dependent boundary condition must be provided. 

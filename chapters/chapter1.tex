@@ -33,21 +33,21 @@ The software offers an easy-to-use interface, can import \gls{CAD} geometries, a
 It provides various thermal analysis metrics (heat flow, U-value, $\psi$-value, etc.) and measures extreme temperature values. Two contributions stand out that discuss different 3D heat transfer elements and approaches by  \citeauthor{Yang} \cite{Yang}, and \citeauthor{COMSOL} \cite{COMSOL}, while one contribution presents 2D heat transfer using \gls{OF} \cite{kastner2020solving}.
 
 \citeauthor{kastner2020solving} \cite{kastner2020solving} presented a case study that presents a thermal bridge analysis and 2D heat transfer with \gls{OF}, which is similar to our approach due to the use of \gls{OF}. The simulation is constructed from pre-processing, simulation, and post-processing. 
-Based on the result of the used case, it is possible to use \textit{Rhino\ \&\ Grasshopper} to calculate architectural heat transfer in the pre- and post-processing phases, but this requires additional research to achieve this goal. 
+Based on the result of the used case, it is possible to use \textit{Rhino\ \&\ Grasshopper} to calculate architectural heat transfer in the pre-and post-processing phases, but this requires additional research to achieve this goal. 
 The authors experimented with a validation case retrieved from \textit{HTflux} that was originally published in the ISO guide. 
 
-The second approach is found from \citeauthor{Yang} \cite{Yang} which experimented with 3D heat transfer following a different method, which is to develop a mesh using lumped hexahedral elements and employs ray/triangle intersection techniques for an accurate geometric representation of the building. 
+The second approach is found from \citeauthor{Yang} \cite{Yang} which experimented with 3D heat transfer following a different method, which is to develop a mesh using lumped hexahedral elements and employing ray/triangle intersection techniques for an accurate geometric representation of the building. 
 It applies an energy balance to each element and integrates a system of ordinary differential equations to obtain spatio-temporal indoor temperature and relative humidity fields. 
 However, there are several limitations, such as the inability to explicitly solve flow fields, which may limit its accuracy in capturing complex airflow patterns. 
-Furthermore, idealized thermal conditions do not include real-world conditions and do not accurately represent the impact of the thermal mass of the floor.. 
+Furthermore, idealized thermal conditions do not include real-world conditions and do not accurately represent the impact of the thermal mass of the floor. 
 
 
-The third approach by  \citeauthor{COMSOL}  \cite{COMSOL} used \textit{COMSOL / Multiphysics} to simulate heat transfer in buildings and has been validated. There were minor differences in the results because of the convective heat transfer coefficient. 
-The main impediment with \textit{COMSOL / Multiphysics} are the cost and the need to use software that is not integrated into the design software.
+The third approach of \citeauthor{COMSOL} \cite{COMSOL} used \textit{COMSOL / Multiphysics} to simulate heat transfer in buildings and has been validated. There were minor differences in the results because of the convective heat transfer coefficient. 
+The main impediments with \textit{COMSOL / Multiphysics} are the cost and the need to use software that is not integrated into the design software.
 However, the authors' work is valuable in terms of offering heat transfer simulation focusing on buildings.  %cost
 
-The final research by \citeauthor{litrev2} \cite{litrev2} is directly connected to the aim of this thesis. 
-It uses computational fluid dynamics (CFD) simulation of convective heat transfer, but specifically in Japanese vernacular architecture, focusing on "machiya" buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal HVAC assistance. The study aims to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations. Through comparison and evaluation of different RANS models and boundary layer modeling approaches, the researchers identify suitable methods for predicting convective heat transfer coefficients (\gls{CHTC}) and flow fields. Validation against wind-tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to the advancement of simulation methodologies for sustainable building design, but did not meet the objective of automating the heat transfer workflow to simplify it for the user. 
+The final research by \citeauthor{litrev2} \cite{litrev2} is directly related to the aim of this thesis. 
+It uses computational fluid dynamics (CFD) simulation of convective heat transfer, but specifically in Japanese vernacular architecture, focusing on "machiya" buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal assistance from HVAC. The purpose of the study is to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations. Through comparison and evaluation of different \gls{RANS} models and boundary layer modeling approaches, the researchers identify suitable methods to predict convective heat transfer coefficients (\gls{CHTC}) and flow fields. Validation against wind tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to the advancement of simulation methodologies for sustainable building design but did not meet the objective of automating the heat transfer workflow to simplify it for the user. 
 
 
 
@@ -57,31 +57,29 @@ It uses computational fluid dynamics (CFD) simulation of convective heat transfe
     \footnotesize
     \caption{Heat Transfer Simulation Software Overview}
     \label{tab:heat_transfer_software}
-    \begin{tabular}{lcp{5cm}lp{1cm}p{1cm}p{1.5cm}p{1cm}p{6cm}p{1.5cm}} 
+    \begin{tabular}{ll>{\raggedright}p{5.3cm}lp{1cm}p{1cm}p{1.5cm}p{1cm}>{\raggedright}p{4cm}r} 
         \toprule
         Software & Type & Overview & Price & Rhino / Revit & Ease of Use & Complex Geometry & Export PV & Limitations & Source \\
         \midrule
         THERM     & 2D & Finite-element approach for complex geometries & \$0 & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Limited to 2D, requires additional tools. & \cite{THERM} \\
-        HTFLUX    & 2D & Heat and water vapor transport simulation & \$421/yr & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Requires additional tool downloads. & \cite{HTFLUX} \\
+        HTFLUX    & 2D & Heat and water vapor transport simulation & \$421/yr & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Requires additional tool downloads. & \cite{HTflux} \\
         ENERGY2D  & 2D & Multiphysics program for conduction, convection, and radiation & \$0 & \ding{55} & \ding{55} & \ding{55} & \ding{55} & No user interface. Requires additional tool downloads. & \cite{energy2d} \\
         HEAT2     & 2D & Transient and steady-state heat transfer & \$800/yr & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Requires additional tool downloads. & \cite{heat2} \\
         Kelvin    & 2D & Temperature, heat flux, and gradient simulation & NA & \ding{55} & \ding{51} & \ding{55} & \ding{55} & Requires additional tool downloads. & \cite{kelvin} \\
         Quickfield & 3D & Static and transient heat transfer analysis & Node-based & \ding{55} & \ding{51} & \ding{51} & \ding{55} & Limited post-processing, additional tools. & \cite{quickfield} \\
         Simscale  & 3D & Models heat transfer in solids and fluids through convection & Core-based & \ding{55} & \ding{55} & \ding{51} & \ding{55} & Cost-prohibitive, limited post-processing. & \cite{simscale} \\
-        COMSOL    & 3D & Heat transfer by conduction, convection, and radiation & \$4000 & \ding{55} & \ding{55} & \ding{51} & \ding{55} & Cost-prohibitive, requires additional tools. & \cite{comsol} \\
-        theseus   & 3D & FEM for steady-state and transient analysis & NA & \ding{55} & \ding{51} & \ding{51} & \ding{51} & Limited post-processing, cost-prohibitive. & \cite{theseus} \\
+        COMSOL    & 3D & Heat transfer by conduction, convection, and radiation & \$4000 & \ding{55} & \ding{55} & \ding{51} & \ding{55} & Cost-prohibitive, requires additional tools. & \cite{COMSOL} \\
+        theseus   & 3D & FEM for steady-state and transient analysis & NA & \ding{55} & \ding{51} & \ding{51} & \ding{51} & Limited post-processing, cost-prohibitive. & \cite{theusus} \\
         Physibel (S)  & 3D & Examines entire buildings with 2D/3D components & \$2,359/yr & \ding{55} & \ding{55} & \ding{51} & \ding{55} & Cost-prohibitive, limited post-processing. & \cite{physibel} \\
         TAITHERM  & 3D & Simulates transient or steady-state heat transfer & NA & \ding{55} & \ding{51} & \ding{51} & \ding{55} & Cost-prohibitive, limited post-processing. & \cite{taitherm} \\
         \bottomrule
     \end{tabular}
 \end{table}
+\enlargethispage{1cm}
 \end{landscape}
 
     
 
-
-
-\todo{bring citations back into this table. Awesome table! Add citations in its own column}
 
 
 
@@ -112,7 +110,7 @@ It uses computational fluid dynamics (CFD) simulation of convective heat transfe
 
 
 This thesis presents a simulation based on conductive and convective heat transfer. 
-The conductive heat transfer can be calculated using the heat diffusion equation \cite{bergman2011fundamentals}:
+Conductive heat transfer can be calculated using the heat diffusion equation \cite{bergman2011fundamentals}:
 	
 	\begin{equation} 
 	\frac{\partial^2 T}{\partial x^2}+
@@ -130,11 +128,11 @@ To calculate convective heat transfer, the formula used accounts for both advect
     \frac{\partial T}{\partial t} + \mathbf{v} \cdot \nabla T = \alpha \nabla^2 T + \frac{\dot{q}}{k},
 \end{equation}
 
-where $\mathbf{v}$ is the velocity vector of the fluid, $\alpha$ is the thermal diffusivity, $\nabla$ stands for the gradient operator, $\nabla^2$ represents the Laplacian operator, $\dot{q}$ is the energy generation rate per unit volume, and $k$ is the thermal conductivity \cite{bergman2011fundamentals}. This project utilizes the conjugate convective heat transfer approach, which is the heat transfer of the combination of solids and fluids. Here, the solids are solved by the steady-state Laplace equation and the fluid flow is solved by the Navier-Stokes equations. Finally, the interfaces are matched to provide temperature distributions and heat flux \cite{Zhao2007}. Thus, performing 3D heat transfer in architectural applications is challenging and cannot be solved by hand due to the complexity of the differential equations used.
+where $\mathbf{v}$ is the velocity vector of the fluid, $\alpha$ is the thermal diffusivity, $\nabla$ stands for the gradient operator, $\nabla^2$ represents the Laplacian operator, $\dot{q}$ is the energy generation rate per unit volume, and $k$ is the thermal conductivity \cite{bergman2011fundamentals}. This project utilizes the conjugate convective heat transfer approach, which is the heat transfer of the combination of solids and fluids. Here, the solids are solved by the steady-state Laplace equation, and the fluid flow is solved by the Navier-Stokes equations. Finally, the interfaces are matched to provide temperature distributions and heat flux \cite{Zhao2007}. Thus, performing 3D heat transfer in architectural applications is challenging and cannot be solved by hand due to the complexity of the differential equations used.
 
 
 
 \section{Computational Fluid Dynamics}
-The approach this research follows uses \gls{OF} which stands for Open-source Field Operation and Manipulation and is a widely used open-source computational fluid dynamics  (CFD) software package that allows engineers and researchers to simulate fluid flow, heat transfer, and other related phenomena using numerical methods. The project uses CFD to calculate the heat flow gradient in the space. The selected \gls{OF} solver in this project is \textit{\gls{cht}MultiRegionFoam} which is a solver capable of solving for steady or transient fluid flow with solid heat conduction and conjugate heat transfer between regions, buoyancy effects, turbulence, reactions, and radiation modeling\footnote{Not used in this study.} \cite{cht}. A detailed description of the solver can be found in Chapter 3.
+The approach this research follows uses \gls{OF} which stands for Open-source Field Operation and Manipulation and is a widely used open-source computational fluid dynamics  (CFD) software package that allows engineers and researchers to simulate fluid flow, heat transfer, and other related phenomena using numerical methods. The project uses CFD to calculate the heat flow gradient in the space. The selected \gls{OF} solver in this project is \textit{\gls{cht}MultiRegionFoam} which is a solver capable of solving steady or transient fluid flow with solid heat conduction and conjugate heat transfer between regions, buoyancy effects, turbulence, reactions and radiation modeling\footnote{Not used in this study.} \cite{cht}. A detailed description of the solver can be found in Chapter 3.
 
 
