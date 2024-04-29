@@ -6,8 +6,8 @@ The capabilities of current software packages are specific to remodeling one wal
 the user is required to remodel walls, sections, or entire buildings, depending on the scale of the project and the number of design changes involved.
 
 Traditional building design processes often rely on simplified 2D heat transfer models, that fail to capture the precise thermal interactions that occur in the real world. This limitation affects the accuracy of performance predictions and affects the identification of optimal design solutions for energy efficiency. 
-3D simulations offer a more realistic representation of thermal transfer, accounting for both conduction and convection. 
-Moreover, they hold massive potential for cost reduction and carbon emission mitigation. 
+3D simulations offer a more realistic representation of thermal transfer, especially if they account for both conduction and convection. 
+Moreover, they hold significant potential for cost reduction and carbon emission mitigation. 
 
 
 %The impact of this research is significant on energy efficiency, reduced operational carbon, and possibly reduced embodied carbon by adding the climate zone, and the tool will provide recommendations.
@@ -47,7 +47,7 @@ The main impediments with \textit{COMSOL / Multiphysics} are the cost and the ne
 However, the authors' work is valuable in terms of offering heat transfer simulation focusing on buildings.  %cost
 
 The final research by \citeauthor{litrev2} \cite{litrev2} is directly related to the aim of this thesis. 
-It uses computational fluid dynamics (CFD) simulation of convective heat transfer, but specifically in Japanese vernacular architecture, focusing on "machiya" buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal assistance from HVAC. The purpose of the study is to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations. Through comparison and evaluation of different \gls{RANS} models and boundary layer modeling approaches, the researchers identify suitable methods to predict convective heat transfer coefficients (\gls{CHTC}) and flow fields. Validation against wind tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to the advancement of simulation methodologies for sustainable building design but did not meet the objective of automating the heat transfer workflow to simplify it for the user. 
+It uses computational fluid dynamics (CFD) simulation of convective heat transfer, but specifically in Japanese vernacular architecture, focusing on "machiya" buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal assistance from HVAC. The purpose of the study is to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations. Through comparison and evaluation of different \gls{RANS} models and boundary layer modeling approaches, the researchers identify suitable methods to predict convective heat transfer coefficients (\gls{CHTC}) and flow fields. Validation against wind tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to the advancement of simulation methodologies for sustainable building design but did not meet our objective of automating the heat transfer workflow to simplify it for the user. 
 
 
 
@@ -55,7 +55,7 @@ It uses computational fluid dynamics (CFD) simulation of convective heat transfe
 \begin{table}[htb]
     \centering
     \footnotesize
-    \caption{Heat Transfer Simulation Software Overview}
+    \caption{Heat Transfer Simulation Software Overview.}
     \label{tab:heat_transfer_software}
     \begin{tabular}{ll>{\raggedright}p{5.3cm}lp{1cm}p{1cm}p{1.5cm}p{1cm}>{\raggedright}p{4cm}r} 
         \toprule
@@ -76,6 +76,7 @@ It uses computational fluid dynamics (CFD) simulation of convective heat transfe
     \end{tabular}
 \end{table}
 \enlargethispage{1cm}
+\todo{add citation to this table in the text!!! explain what it shows.}
 \end{landscape}
 
     
@@ -125,14 +126,14 @@ Here, $x,y,$ and $z$ are the Cartesian coordinates, $\alpha$ is the thermal diff
 To calculate convective heat transfer, the formula used accounts for both advection (the movement of heat with the fluid flow) and diffusion (the spatial variation of temperature): 
 
 \begin{equation}
-    \frac{\partial T}{\partial t} + \mathbf{v} \cdot \nabla T = \alpha \nabla^2 T + \frac{\dot{q}}{k},
+    \frac{\partial T}{\partial t} + \vb v \cdot \nabla T = \alpha \nabla^2 T + \frac{\dot{q}}{k},
 \end{equation}
 
-where $\mathbf{v}$ is the velocity vector of the fluid, $\alpha$ is the thermal diffusivity, $\nabla$ stands for the gradient operator, $\nabla^2$ represents the Laplacian operator, $\dot{q}$ is the energy generation rate per unit volume, and $k$ is the thermal conductivity \cite{bergman2011fundamentals}. This project utilizes the conjugate convective heat transfer approach, which is the heat transfer of the combination of solids and fluids. Here, the solids are solved by the steady-state Laplace equation, and the fluid flow is solved by the Navier-Stokes equations. Finally, the interfaces are matched to provide temperature distributions and heat flux \cite{Zhao2007}. Thus, performing 3D heat transfer in architectural applications is challenging and cannot be solved by hand due to the complexity of the differential equations used.
+where $\mathbf{v}$ is the velocity vector of the fluid, $\alpha$ is the thermal diffusivity, $\nabla$ stands for the gradient operator, $\nabla^2$ represents the Laplacian operator, $\dot{q}$ is the energy generation rate per unit volume, and $k$ is the thermal conductivity \cite{bergman2011fundamentals}. This project utilizes the conjugate convective heat transfer approach, which is the heat transfer of the combination of solids and fluids. Here, the solids are solved by the steady-state Laplace equation, and the fluid flow is solved by the Navier-Stokes equations. Finally, the interfaces are matched to provide temperature distributions and heat flux \cite{Zhao2007}. Thus, performing 3D heat transfer in most architectural applications is challenging and cannot be solved by hand due to the complexity of the mathematics involved.
 
 
 
 \section{Computational Fluid Dynamics}
-The approach this research follows uses \gls{OF} which stands for Open-source Field Operation and Manipulation and is a widely used open-source computational fluid dynamics  (CFD) software package that allows engineers and researchers to simulate fluid flow, heat transfer, and other related phenomena using numerical methods. The project uses CFD to calculate the heat flow gradient in the space. The selected \gls{OF} solver in this project is \textit{\gls{cht}MultiRegionFoam} which is a solver capable of solving steady or transient fluid flow with solid heat conduction and conjugate heat transfer between regions, buoyancy effects, turbulence, reactions and radiation modeling\footnote{Not used in this study.} \cite{cht}. A detailed description of the solver can be found in Chapter 3.
+We use \gls{OF} which stands for Open-source Field Operation and Manipulation and is a widely used open-source \gls{CFD} software package that allows engineers and researchers to simulate fluid flow, heat transfer, and other related phenomena using numerical methods. The project uses \gls{CFD} to calculate the heat flow gradient in the space. The selected \gls{OF} solver in this project is \gls{CHT} \textit{chtMultiRegionFoam} which is a solver capable of solving steady or transient fluid flow with solid heat conduction and conjugate heat transfer between regions, buoyancy effects, turbulence, reactions, and radiation modeling\footnote{Not used in this study.} \cite{cht}. A detailed description of the solver can be found in Chapter 3.
 
 
