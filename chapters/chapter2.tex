@@ -2,10 +2,10 @@
 
 \chapter{2D Heat Transfer Methodology}
 
-This chapter showcases one of the simplest heat transfer cases, which is a single layer  heat transfer methodology---in this case, a brick wall.
-Understanding what resources and capabilities can be utilized, from hand calculation before a numerical method is used, is a helpful undertaking. 
-Thus, this chapter presents different approaches to finding the 2D brick wall heat flux. First, an estimation of the heat flux was calculated manually. Then, the same boundary conditions were used in an experimental design, resulting in the same heat flux value. Followed by, implementing the same brick wall geometry, boundary conditions, and materials in HTflux which is a 2D heat transfer software and the resulting heat flux complies with the previous results as well. %dont know if I should add this sentence below
-Finally, this 2D brick wall will be implemented in the \gls{OF} 3D heat transfer workflow presented in this project to see if the temperatures and heat flux comply with the results from the previous approaches. 
+This chapter showcases one of the simplest heat transfer cases, which is a single-layer heat transfer methodology---in this case, a brick wall.
+Understanding what resources and capabilities can be utilized, from hand calculation before using a numerical method, is a helpful undertaking. 
+Thus, this chapter presents different approaches to finding the 2D brick wall heat flux. First, an estimation of the heat flux was calculated manually. Then, the same boundary conditions were used in an experimental design, resulting in the same heat flux value. Then we implement the same brick wall geometry, boundary conditions, and materials in HTflux, which is a 2D heat transfer software and the resulting heat flux complies with the previous results as well. %dont know if I should add this sentence below
+Finally, this 2D brick wall will be implemented in the \gls{OF} 3D heat transfer workflow presented in this project to see if the temperatures and heat flux comply with the results from previous approaches. 
 
 
 
@@ -17,8 +17,8 @@ q = -k \frac{dT}{dx}
 \end{equation}
 
 where q is the heat flux,
-k is the Thermal conductivity, and
-$\frac{dT}{dx}$ is the Temperature gradient, which can be found by $\frac{T_2 - T_1}{L}$ over thickness L \cite{heattransfund}. 
+k is the thermal conductivity and
+$\frac{dT}{dx}$ is the temperature gradient, which can be found by $\frac{T_2 - T_1}{L}$ over thickness L \cite{heattransfund}. 
 
 Solving for q where k = 1 ${W/m}^2$, 
 L = 0.43 m,
@@ -39,7 +39,7 @@ So, the heat flux \( q \) is \( 10.93 \, \text{W/m}^2 \).
 \section{Heat Flux Sensors Experiment}
 
 
-This section presents the measurement approach to estimating heat flux, which is a real-time measurement of the 2D brick wall. The experiment was carried out in the 358D office located in the Hinman Research building\footnote{\url{https://maps.app.goo.gl/BSMCrMDtWg2PdHGL7}} with a duration of 74 hours using \gls{U}-value and heat flux sensors as shown in \ref{fig:figexp1} \textbf{(a)} and \ref{fig:figexp1} \textbf{(b)}. The experiment started on March 14, 2024, at 14:24:15 until March 17, 2024, at 15:24:15. 
+This section presents the measurement approach for estimating heat flux, which is a real-time measurement of the 2D brick wall. The experiment was carried out in the 358D office located in the Hinman Research building\footnote{\url{https://maps.app.goo.gl/BSMCrMDtWg2PdHGL7}} with a duration of 74 hours using \gls{U}-value and heat flux sensors as shown in \ref{fig:figexp1} \textbf{(a)} and \ref{fig:figexp1} \textbf{(b)}. The experiment started on March 14, 2024, at 14:24:15, until March 17, 2024, at 15:24:15. 
 The experimental design details and results are showcased in the upcoming subsections.
 
 
@@ -48,8 +48,8 @@ The experimental design details and results are showcased in the upcoming subsec
 
  
 \subsubsection{Experimental Design}
- This experiment is based on using the measurement device the gSKIN® KIT-2615C (calibrated) U-Value and Heat Flux Measurement Kit from GreenTeg  \cite{greenteg} shown in \ref{fig:toolkit}. The equipment was purchased using funds received from the Micro Research Grants for Regenerative Built Environments, provided by the Kendeda Building Advisory Board \cite{kendeda}.
- The schematic in \cref{fig:2d2} shows the experimental design setup with the same conditions of k  = 1 ${W/m}^2$ 
+ This experiment is based on the use of the measurement device gSKIN® KIT-2615C (calibrated) U value and heat flux measurement kit from GreenTeg \cite{greenteg} shown in \ref{fig:toolkit}. The equipment was purchased using funds received from the Micro Research Grants for Regenerative Built Environments, provided by the Kendeda Building Advisory Board \cite{kendeda}.
+ The schematic in \cref{fig:2d2} shows the experimental design setup with the same conditions of k = 1 ${W/m}^2$ 
 L = 0.43 m,
 $T_1$ = 25.8 $^\circ \text{C}$, 
 $T_2$  = 21.1  $^\circ \text{C}$.
@@ -109,7 +109,7 @@ Where U-value from the report = 2.31\, ${W/m^2k}$ and
 \end{equation}
 Where k = 1 \text{W/(m²)}, L (thickness) = 0.43. So, \(U_{\text{calc}}\) = \(U_{\text{exp}}\) = 2.31 ${W/m^2k}$ 
 
-\ref{fig:expr} below is a plot report showing the experimental design results of the fluctuations in indoor and outdoor temperature along with the heat flux. From the report, three temperatures from different time steps were selected to be compared with the 3D simulation results. Also, \ref{table2d} shows the comparison of the selected three points, where $T_{val}$ is the experiment's resulting temperature and $T_{sim}$ is the simulation's resulting temperature. 
+\ref{fig:expr} below is a plot report showing the experimental design results of the fluctuations in indoor and outdoor temperature along with the heat flux. From the report, three temperatures from different time steps were selected to be compared with the 3D simulation results. In addition, \ref{table2d} shows the comparison of the three selected points, where $T_{val}$ is the resulting temperature of the experiment and $T_{sim}$ is the resulting temperature of the simulation. 
 The measurement approach represented in this section offers detailed time-step values for temperature and heat flux. However, the cost of the sensor kit is high: \$2,157. Another issue with this approach is the time spent setting up and receiving results, where the minimum required reading time is 73 hours. Thus, the next section presents an easier and faster method of finding the heat flux, which is using a 2D heat transfer simulation.
 
 
@@ -149,8 +149,8 @@ The measurement approach represented in this section offers detailed time-step v
 
 \section{Simulation}
 \subsubsection{2D Simulation}
-Moving to the third approach, which is to use 2D heat transfer software, where the same brick wall is modeled in HTFlux. 
-HTFlux is a software that simulates 2D heat transfer seamlessly and calculates the heat flux by providing the temperature gradient \cite{HTflux}. 
+Moving to the third approach, which is to use 2D heat transfer software, where the same brick wall is modeled in HTflux. 
+HTflux is  software that seamlessly simulates 2D heat transfer and calculates heat flux by providing the temperature gradient \cite{HTflux}. 
 The boundary conditions assigned in this simulation are the same as the previous methods which are; brick thermal conductivity is k = 1 ${W/m}^2$ L = 0.43 m,
 $T_1$ = 25.8 $^\circ \text{C}$, 
 $T_2$  = 21.1  $^\circ \text{C}$ .
@@ -179,14 +179,14 @@ $T_2$  = 21.1  $^\circ \text{C}$ .
   \includegraphics[width=\linewidth]{Figures/2dsim.png} 
   \textbf{(b)}
 \end{minipage}
-\caption[2D HTFlux Boundary conditions]{\textbf{(a)} The simulation boundary conditions from HTFlux. \textbf{(b)} The brick wall temperature gradient results from HTFlux and resulting heat flux of \( 10.91 \, {W/m}^2 \). }
+\caption[2D HTFlux Boundary conditions]{\textbf{(a)} The simulation boundary conditions from HTFlux. \textbf{(b)} The brick wall temperature gradient results from HTFlux and the resulting heat flux of \( 10.91 \, {W/m}^2 \). }
 \label{2dconst}
 \end{figure}
 
 
 \subsubsection{3D Simulation Compliance}\label{3dbrick}
-Although Chapter 4 explains the process of building the 3D heat transfer workflow in detail and validating the results with an ISO case, we returned to the brick wall in this chapter to model it with the 3D \gls{OF} simulation to further validate the results. So, the line plots in \ref{fig:expr} are the experimental design results and the points are the 3D heat transfer simulation results. \ref{error2d} is a comparison of the percentage of error between the results of the experiment and the 3D heat transfer workflow, where the average is from 0.003\% to 0.01\%.
-According to ISO \cite{ISO} to validate the case, the percentage of error shall not exceed 0.1\%.
+Although Chapter 4 explains in detail the process of building the 3D heat transfer workflow and validates the results with an ISO case, we returned to the brick wall in this chapter to model it with the 3D \gls{OF} simulation to further validate the results. So, the line plots in \ref{fig:expr} are the experimental design results and the points are the 3D heat transfer simulation results. \ref{error2d} is a comparison of the percentage of error between the results of the experiment and the 3D heat transfer workflow, where the average ranges from 0.003\% to 0.01\%.
+According to ISO \cite{ISO} to validate the case, the percentage of error should not exceed 0.1\%.
 
 \begin{figure}[tb]
      \centering
