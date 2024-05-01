@@ -74,8 +74,7 @@
     showtabs=false,                  
     tabsize=2
 }
-
-
+\lstset{style=mystyle}
 
 
 \usepackage{booktabs} % for \toprule, \midrule, and \bottomrule
@@ -83,10 +82,15 @@
 \usepackage{array}    % for custom column styles
 \usepackage{graphicx} % for resizing large tables
 
+\usepackage{siunitx}
 \usepackage{physics}
-\AtBeginDocument{\RenewCommandCopy\qty\SI} 
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
 
-\lstset{style=mystyle}
+\sisetup{
+    sticky-per=true,
+    detect-mode=true,
+    per-mode = symbol-or-fraction
+}
 
 % document body
 \begin{document}

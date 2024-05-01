@@ -32,7 +32,7 @@
 \RequirePackage[toc,page]{appendix}  % for appendices
 \RequirePackage[normalem]{ulem}  % for underlining text
 \RequirePackage{url} % in case explicit URL's are needed
-\RequirePackage{siunitx} % several functions related to expressing units
+%\RequirePackage{siunitx} % several functions related to expressing units
 %\RequirePackage[bookmarks=true,hidelinks]{hyperref} % should be last(ish)
 \RequirePackage{bookmark} % allows reformatting of pdf bookmarks
 \RequirePackage{caption} % captions for figures
@@ -41,11 +41,7 @@
 \RequirePackage{doi} % and this is laster, makes easier hyperlinking for doi sources
 \RequirePackage{float}
 
-\sisetup{
-    sticky-per=true,
-    detect-mode=true,
-    per-mode = symbol-or-fraction
-}
+
 
 \doublespacing  % set line spacing
 \AtBeginDocument{\renewcommand{\ref}[1]{\autoref{#1}}} % for concision, but can be removed if you know what you're doing

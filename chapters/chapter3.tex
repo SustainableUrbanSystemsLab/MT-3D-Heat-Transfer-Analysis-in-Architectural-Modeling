@@ -38,7 +38,7 @@ The geometry consists of two levels: a first floor and a second floor, separated
 A description of each material in the geometry can be found in \ref{fig:validation-case-materials} \textbf{(a)}.
 
 %One of the challenges we faced was retrieving this case study due to the lack of availability of validated 3D and not 2D heat transfer cases that incorporate building materials. 
-Beyond \textit{ISO 10211:2007}, it is also documented in the \textit{QuickField} software where the properties, layers, and boundary conditions of the materials are accessible, which we exported to compare it with our method. 
+Beyond \textit{ISO 10211:2007}, it is also documented in the QuickField 6.6 (student version) software where the properties, layers, and boundary conditions of the materials are accessible, which we exported to compare it with our method. 
 
    
 
@@ -69,7 +69,7 @@ Beyond \textit{ISO 10211:2007}, it is also documented in the \textit{QuickField}
 
 
 
-\textit{QuickField}'s Heat Transfer module offers versatile features including steady-state and transient formulations with customizable initial field distributions and flexible time parameters, accommodating nonlinear specific heat and nonlinear or anisotropic properties. Although the results include diverse thermal field mappings such as temperature, heat flux, and thermal gradients, editing and customizing the post-process options and locations were limited.
+QuickField's Heat Transfer module offers versatile features including steady-state and transient formulations with customizable initial field distributions and flexible time parameters, accommodating nonlinear specific heat and nonlinear or anisotropic properties. Although the results include diverse thermal field mappings such as temperature, heat flux, and thermal gradients, editing and customizing the post-process options and locations were limited.
 
 
 
@@ -78,7 +78,7 @@ Beyond \textit{ISO 10211:2007}, it is also documented in the \textit{QuickField}
 After selecting the validation case, the geometry is modeled in Rhinoceros, where it will be used as a user interface to connect the model to \gls{GH}. \gls{GH} is a visual programming environment that we use to automate the \gls{OF} simulation. 
 The \gls{GH} script enables the automation of the geometry pipeline, which, for example, enables us to find the coordinates of the points in the region, and to set the mesh, boundary conditions, and material properties. 
 In addition, we use \gls{OF}, which is an open-source computational fluid dynamics (CFD) software package that is used to simulate fluid flow, heat transfer, and other capabilities. 
-\todo{make sure OF is either in italics everywhere or nowhere}
+
 
 %\subsection{OF Text files Automation by  \gls{ \gls{GH}}}   
 This subsection explains the Grasshopper script that automatically creates and exports STL files, defines material properties, finds the location of the points in the meshes, and writes all the text files needed to run the \gls{OF} case.
@@ -156,7 +156,8 @@ The \gls{GH} script includes sections to write all of the $p$, $T$, $U$, and pro
 As briefly stated at the beginning, this project utilizes the CFD capabilities of OpenFOAM (Open-source Field Operation and Manipulation, or OF).  \gls{OF} is a C++ toolkit built for developing custom numerical solvers and pre- and post-processing tools. \gls{OF} is mainly used to simulate computational fluid dynamics (CFD). The software is open-source, free to use, and distributed under the GNU General Public License Version 3.
 By integrating the capabilities of \gls{OF} into Rhino, the complexity of setting up a 3D heat transfer case is simplified and minimized. When using OpenFOAM for simulations, it is important to note that the temperatures for boundary conditions must be specified in Kelvin.
 
-This section provides a detailed description of the case's pre-processing, case study setup, selected solver, and physical models. Also, a description of constructing and running the case. Finally, it provides detailed post-processing steps.
+This section provides a detailed description of the case's pre-processing, case study setup, selected solver, and physical models, as well as a description of constructing and running the case. 
+Finally, it provides detailed post-processing steps.
 
 
 
@@ -201,7 +202,7 @@ The pre-processing phase consists of dividing the geometry into different zones 
 \begin{table}[tbh]
     \centering
     \label{tab:construction_material_properties}
-    \caption[3D Material Properties]{Construction material properties and boundary conditions used for the simulation domain. Data were taken from the demo example in \textit{QuickField}.}
+    \caption[3D Material Properties]{Construction material properties and boundary conditions used for the simulation domain. Data were taken from the demo example in QuickField.}
       \centering
         %\footnotesize
         \begin{tabular}{clrrr}    
@@ -242,9 +243,9 @@ The pre-processing phase consists of dividing the geometry into different zones 
 
 
 \subsubsection{Case Study setup}
-The case study geometry was exported from \textit{QuickField} and then modeled in \textit{Rhinoceros} and subsequently exported as a mesh to be processed with  \gls{OF} where \ref{meshsteps} visualizes the steps to create the mesh. 
-The validation case was constructed in \textit{ \gls{OF}}\todo{check if you want italics or not? Please either all software in italics or not italics} by creating the mesh and \textit{snappyHexMesh} files.  
-\ref{fig:validation-case-materials}  (b) illustrates the \textit{\gls{OF}} mesh visualized in \textit{ParaView}.
+The case study geometry was exported from QuickField and then modeled in Rhinoceros and subsequently exported as a mesh to be processed with  \gls{OF} where \ref{meshsteps} visualizes the steps to create the mesh. 
+The validation case was constructed in \gls{OF} by creating the mesh and \textit{snappyHexMesh} files.  
+\ref{fig:validation-case-materials}  (b) illustrates the \gls{OF} mesh visualized in ParaView.
     
 
 
@@ -282,7 +283,7 @@ Solid Energy Conservation is:
 \frac{\partial (\rho h)}{\partial t} = \frac{\partial}{\partial x_j}\left( \alpha \frac{\partial h}{\partial x_j} \right)
 \end{equation}
 
-Where \( h \) is the specific enthalpy, \( \rho \) is the density, and \( \alpha = \frac{\kappa}{c_p} \) is the thermal diffusivity, and the specific heat capacity \( c_p \) \todo{this was spelled as capital in the chapter before, please make consistent}. 
+Where \( h \) is the specific enthalpy, \( \rho \) is the density, and \( \alpha = \frac{\kappa}{c_p} \) is the thermal diffusivity, and the specific heat capacity \( C_p \).
 
 
 \subsubsection{3. Solid and Fluid Interface}
@@ -301,12 +302,12 @@ Where \( \kappa_f \) thermal conductivity of the fluid and \( \kappa_s \)  the t
 
 
 \subsection{Physical Models}
-The physical models found in the constant file are required for the simulation to run according to the \gls{OF} documentation \cite{OFD}. However, it is also an important part in the integration of architecture and building geometry. First, the \textit{turbulence model} is connected to the fluid in the space, and the fluid properties. \textit{Turbulence} is useful when understanding the thermal comfort in space, but also to combine the conduction of the interaction of the material in the interface with the convection to have an accurate heat transfer result. Moving to the second physical model, which is the \textit{ thermophysical model}, where its connection to architectural modeling is to specify each of the properties of the material used to accurately understand the rate of heat transfer. Finally, moving to the last model, which is the \textit{finite volume options model} which is an optional model to provide additional detailed boundary conditions and specify the heat sources. \todo{you sure about this? please double check} 
+The physical models found in the constant file are required for the simulation to run according to the \gls{OF} documentation \cite{OFD}. However, it is also an important part in the integration of architecture and building geometry. First, the \textit{turbulence model} is connected to the fluid in the space, and the fluid properties. \textit{Turbulence} is useful when understanding the thermal comfort in space, but also to combine the conduction of the interaction of the material in the interface with the convection to have an accurate heat transfer result. Moving to the second physical model, which is the \textit{ thermophysical model}, where its connection to architectural modeling is to specify each of the properties of the material used to accurately understand the rate of heat transfer. Finally, moving to the last model, which is the \textit{finite volume options model} which includes required models such as turbulence and optional models to provide additional detailed boundary conditions and specify the heat sources. 
 This option can be used in architectural applications to optimize for the best location of the heat source or other specific limits. The following is a detailed description of each of the physical models in OpenFOAM.
 
 
 \subsubsection{Turbulence Properties}
-The turbulence used for steady-state heat transfer is \gls{RAS}, where the full form is an anisotropic contribution of Reynolds stress, shown below, to influence the motion of a fluid, providing a comprehensive understanding of fluid flow dynamics. Where the heat conservation equation according to \cite{hce}
+The turbulence used for steady-state heat transfer is \gls{RAS}, where the full form is an anisotropic contribution of Reynolds stress, shown below, to influence the motion of a fluid, providing a comprehensive understanding of fluid flow dynamics. Where the heat conservation equation according to \cite{hce}:
 
 \begin{equation}
 u_i \frac{\partial T}{\partial x_i} + \frac{\partial}{\partial x_i}(K_T \frac{\partial T}{\partial x_i}) = 0 \label{eq:heat}
@@ -330,7 +331,7 @@ Where, $\rho$ is the density of the fluid, $u_i$ is the velocity component in th
 \subsubsection{Thermophysical Models}
 The thermophysical properties located in each zone and the constant file require input of density $\rho$, thermal conductivity, and specific heat capacity for every material.
 \subsubsection{Finite Volume Options}
-The fvOptions text file allows the user to further manipulate the systems of equations, such as sources and sinks.  \todo{do not think this is true, please double-check!!!}
+The fvOptions text file allows the user to further manipulate the systems of equations, such as sources and sinks \cite{ofvoptions}.  
 
 
 \subsection{Constructing The Case}    
@@ -355,7 +356,7 @@ An \gls{OF} steady state heat transfer case requires three main folders to run, 
 
 \subsection{Running The Case}    
  
-After discussing the selected solver capabilities to run the numerical simulation. The goal is to solve heat transfer in solid and liquid regions between air regions and the selected geometry. Using the software \textit{QuickField}  to solve for 3D heat transfer showed some limitations where it does not consider the air regions. However, our approach using  \gls{OF} includes the integration between air and solids to produce more accurate results. 
+After discussing the selected solver capabilities to run the numerical simulation. The goal is to solve heat transfer in solid and liquid regions between air regions and the selected geometry. Using the software QuickField to solve for 3D heat transfer showed some limitations where it does not consider the air regions. However, our approach using  \gls{OF} includes the integration between air and solids to produce more accurate results. 
 
 \begin{figure}[tbh] 
 \includegraphics[width=0.77\columnwidth]{Figures/conductive.png}
@@ -410,7 +411,7 @@ The meshes are created based on the specifications outlined in a dictionary file
 
 %\clearpage
 \subsection{Post-processing}
-After running the simulation until convergence, multiple text files of $T$, $P$, and $U$ are solved for each region. There are two methods to post-process and visualize the resulting data. The first method is using \textit{Paraview} to visualize the outcome and process the results. The second method is \textit{\gls{OF}}'s post-process command, first, select the probing locations using \gls{GH} automation components to automatically write the post-processing file and measure the data, then plot the data to compare the validation case temperatures with our results. 
+After running the simulation until convergence, multiple text files of $T$, $P$, and $U$ are solved for each region. There are two methods to post-process and visualize the resulting data. The first method is using Paraview to visualize the outcome and process the results. The second method is \gls{OF}'s post-process command, first, select the probing locations using \gls{GH} automation components to automatically write the post-processing file and measure the data, then plot the data to compare the validation case temperatures with our results. 
 
 
 
@@ -419,7 +420,7 @@ After running the simulation until convergence, multiple text files of $T$, $P$,
 
 This section discusses the results of key experimental results of our ongoing research. 
 \Cref{paraview} \textbf{(a)} visualizes the simulation temperature output, including the air (fluid) regions. Whereas
-\Cref{paraview} \textbf{(b)} shows the geometry excluding air, which represents the temperature distributions. The resulting temperatures are shown in the plot in \cref{fig:validation-plots}. The plot includes the \textit{QuickField} outputs and our  \gls{OF} simulation along the z-axis from $z= 1.2$ to $z=2.2$ (the red line shown in \cref{paraview} \textbf{(a)}) and represents non-linear progression as a result of the different specific heat capacities and thermal conductivity of the materials. The peak in z=1.8 refers to the temperature of the slab, which can be modified by readjusting the slab model and re-simulating it. 
+\Cref{paraview} \textbf{(b)} shows the geometry excluding air, which represents the temperature distributions. The resulting temperatures are shown in the plot in \cref{fig:validation-plots}. The plot includes the QuickField outputs and our \gls{OF} simulation along the z-axis from $z= 1.2$ to $z=2.2$ (the red line shown in \cref{paraview} \textbf{(a)}) and represents non-linear progression as a result of the different specific heat capacities and thermal conductivity of the materials. The peak in z=1.8 refers to the temperature of the slab, which can be modified by readjusting the slab model and re-simulating it. 
 
 
 
@@ -458,14 +459,14 @@ The simulation focuses on convective and conductive heat transfer for a 3D heat 
 
 \subsection{Challenges}
 \subsubsection{SIGFPE Error}
-In some cases when changing or rescaling the geometry in Rhino, running the solver results in a signal floating-point error (SIGFPE), which might involve issues such as division by zero, floating-point underflow or overflow, integer overflow, etc. \cite{sigfpe}. However, in our case, the error occurs from divisions by zero and can be resolved in three ways depending on the circumstance. First, if the geometry in Rhino is re-scaled, the error can be resolved by recomputing the Grasshopper script. The second approach is to verify the boundary conditions in the $P$, and $P_{rgh}$ files, where they need to be absolute pressure and not relative when changing the \gls{OF} text files. The final approach is to recheck the boundary conditions and ensure that the zero gradient is properly assigned to the correct regions.
-\todo{don't call these approaches, call them solutions. "can be solved"}
+In some cases when changing or rescaling the geometry in Rhino, running the solver results in a signal floating-point error (SIGFPE), which might involve issues such as division by zero, floating-point underflow or overflow, integer overflow, etc. \cite{sigfpe}. However, in our case, the error occurs from divisions by zero and can be resolved in three ways depending on the circumstance. First, if the geometry in Rhino is re-scaled, the error can be resolved by recomputing the Grasshopper script. The second solution is to verify the boundary conditions in the $P$, and $P_{rgh}$ files, where they need to be absolute pressure and not relative when changing the \gls{OF} text files. The final solution is to recheck the boundary conditions and ensure that the zero gradient is properly assigned to the correct regions.
+
 
 \subsubsection{Post-Processing}
-Another challenge was to post-process the validation case via \textit{QuickField}, which has several limitations compared to the \gls{OF} simulation discussed in this thesis. 
+Another challenge was to post-process the validation case via QuickField 6.6 (student version), which has several limitations compared to the \gls{OF} simulation discussed in this thesis. 
 These include the inability to choose specific points to analyze temperature, limited visualization options, and no ability to adjust the density of points in the temperature plots. This made it difficult to compare specific temperature patterns.
-\textit{QuickField} does not allow selecting custom probing locations, limiting us to predefined ones.
-\todo{add the version of Quickfield that you used here. was is the free version? what is it called exactly?}
+QuickField 6.6 (student) does not allow selecting custom probing locations, limiting us to predefined ones.
+
 
 \subsubsection{Slab Inaccuracy}
 In the 3D validation case, the slab results demonstrate inaccuracies compared to the experimental case study. Despite the validation of the presented workflow of both the experimental design and the 3D case, the slab's behavior does not align as expected. An attempted solution involved changing the boundary condition at the $max_X$ boundary from $zeroGradient$ to $fixedValue$.
@@ -489,8 +490,8 @@ Both of these solutions aim to correct the inconsistencies caused by incorrect b
 In the experimental design section of this thesis, U-value and heat flux sensors were used to log the temperatures and heat flux for a brick wall for 74 hours. The results were documented in 10-second increments throughout the three days. To validate the results of the experiment with the simulation \gls{OF}, three time steps were chosen from the experimental results to be simulated in three separate steady state heat transfer cases shown in \ref{table2d}, \ref{error2d}, and \ref{fig:expr}. However, the experiment can be easily validated by setting up one transient heat transfer case using the same \textit{chtMultiRegionFoam} solver. To leverage the solver's transient state capabilities, a time-dependent boundary condition must be provided. 
 
 
-\subsection{Additional Potential}\todo{call this differently, this sounds weird}
-Additional potential to the simulation is enabling the users to visualize the thermal comfort in the space (temperature of fluid in the space). Moreover, the use of the adaptable \textit{chtMultiRegionFoam} solver is designed to simulate complex heat transfer scenarios for various applications. It is suitable for analyzing and helping model the performance of heating and cooling systems in the HVAC  industry. In addition, the workflow can be used to assess solar heat gain, analyze heat exchangers, predict condensation, and assess insulation performance. Moreover, the integration into Rhino significantly reduces the time required to simulate 3D heat transfer by condensing the steps to achieve the simulation.
+\subsection{Expanding Capabilities} %\todo{call this differently, this sounds weird}
+Additional capabilities to the simulation is enabling the users to visualize the thermal comfort in the space (temperature of fluid in the space). Moreover, the use of the adaptable \textit{chtMultiRegionFoam} solver is designed to simulate complex heat transfer scenarios for various applications. It is suitable for analyzing and helping model the performance of heating and cooling systems in the HVAC  industry. In addition, the workflow can be used to assess solar heat gain, analyze heat exchangers, predict condensation, and assess insulation performance. Moreover, the integration into Rhino significantly reduces the time required to simulate 3D heat transfer by condensing the steps to achieve the simulation.
 
 
 

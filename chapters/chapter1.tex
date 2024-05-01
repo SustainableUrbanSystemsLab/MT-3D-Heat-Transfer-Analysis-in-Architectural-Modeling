@@ -2,8 +2,8 @@
 
 
 
-The capabilities of current software packages are specific to remodeling one wall or section in separate software, rather than integrating it into the design process using design software packages. Examples of current 2D heat transfer software are \textit{THERM} and \textit{HTFlux}, where
-the user is required to remodel walls, sections, or entire buildings, depending on the scale of the project and the number of design changes involved.
+The capabilities of current software packages are specific to remodeling one wall or section in separate software, rather than integrating it into the design process using design software packages. Examples of current 2D heat transfer software are THERM and HTFlux typically focus on remodeling specific wall sections 
+ rather than integrating it into the overall design process. Table \ref{tab:heat_transfer_software} is a detailed description of the current 2D and 3D heat transfer software with their types and limitations. 
 
 Traditional building design processes often rely on simplified 2D heat transfer models, that fail to capture the precise thermal interactions that occur in the real world. This limitation affects the accuracy of performance predictions and affects the identification of optimal design solutions for energy efficiency. 
 3D simulations offer a more realistic representation of thermal transfer, especially if they account for both conduction and convection. 
@@ -27,14 +27,14 @@ Moreover, they hold significant potential for cost reduction and carbon emission
 % First, a review was made to understand the capabilities of $HTflux$ and $THERM$ \cite{THERM}, which are the main heat transfer software for modelers. 
 
 % HTFlux
-Current tools are limited to 2D heat transfer, such as \textit{HTflux} \cite{HTflux}, which is specialized software for simulations of two-dimensional heat and water vapor transport.
+Current tools are limited to 2D heat transfer, such as HTflux \cite{HTflux}, which is specialized software for simulations of two-dimensional heat and water vapor transport.
 It uses the 2D Glaser method \cite{glaser1959graphisches} to calculate dew points, condensation, and evaporation in 2D structures. 
 The software offers an easy-to-use interface, can import \gls{CAD} geometries, and employs a direct mapping method for accurate simulations. 
 It provides various thermal analysis metrics (heat flow, U-value, $\psi$-value, etc.) and measures extreme temperature values. Two contributions stand out that discuss different 3D heat transfer elements and approaches by  \citeauthor{Yang} \cite{Yang}, and \citeauthor{COMSOL} \cite{COMSOL}, while one contribution presents 2D heat transfer using \gls{OF} \cite{kastner2020solving}.
 
 \citeauthor{kastner2020solving} \cite{kastner2020solving} presented a case study that presents a thermal bridge analysis and 2D heat transfer with \gls{OF}, which is similar to our approach due to the use of \gls{OF}. The simulation is constructed from pre-processing, simulation, and post-processing. 
-Based on the result of the used case, it is possible to use \textit{Rhino\ \&\ Grasshopper} to calculate architectural heat transfer in the pre-and post-processing phases, but this requires additional research to achieve this goal. 
-The authors experimented with a validation case retrieved from \textit{HTflux} that was originally published in the ISO guide. 
+Based on the result of the used case, it is possible to use Rhino\ \&\ Grasshopper to calculate architectural heat transfer in the pre-and post-processing phases, but this requires additional research to achieve this goal. 
+The authors experimented with a validation case retrieved from HTflux that was originally published in the ISO guide. 
 
 The second approach is found from \citeauthor{Yang} \cite{Yang} which experimented with 3D heat transfer following a different method, which is to develop a mesh using lumped hexahedral elements and employing ray/triangle intersection techniques for an accurate geometric representation of the building. 
 It applies an energy balance to each element and integrates a system of ordinary differential equations to obtain spatio-temporal indoor temperature and relative humidity fields. 
@@ -42,12 +42,12 @@ However, there are several limitations, such as the inability to explicitly solv
 Furthermore, idealized thermal conditions do not include real-world conditions and do not accurately represent the impact of the thermal mass of the floor. 
 
 
-The third approach of \citeauthor{COMSOL} \cite{COMSOL} used \textit{COMSOL / Multiphysics} to simulate heat transfer in buildings and has been validated. There were minor differences in the results because of the convective heat transfer coefficient. 
-The main impediments with \textit{COMSOL / Multiphysics} are the cost and the need to use software that is not integrated into the design software.
+The third approach of \citeauthor{COMSOL} \cite{COMSOL} used COMSOL / Multiphysics to simulate heat transfer in buildings and has been validated. There were minor differences in the results because of the convective heat transfer coefficient. 
+The main impediments with COMSOL / Multiphysics are the cost and the need to use software that is not integrated into the design software.
 However, the authors' work is valuable in terms of offering heat transfer simulation focusing on buildings.  %cost
 
 The final research by \citeauthor{litrev2} \cite{litrev2} is directly related to the aim of this thesis. 
-It uses computational fluid dynamics (CFD) simulation of convective heat transfer, but specifically in Japanese vernacular architecture, focusing on "machiya" buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal assistance from HVAC. The purpose of the study is to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady Reynolds-averaged Navier–Stokes (RANS) CFD simulations. Through comparison and evaluation of different \gls{RANS} models and boundary layer modeling approaches, the researchers identify suitable methods to predict convective heat transfer coefficients (\gls{CHTC}) and flow fields. Validation against wind tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to the advancement of simulation methodologies for sustainable building design but did not meet our objective of automating the heat transfer workflow to simplify it for the user. 
+It uses computational fluid dynamics (CFD) simulation of convective heat transfer, but specifically in Japanese vernacular architecture, focusing on “machiya” buildings. These traditional structures offer passive strategies for maintaining indoor comfort with minimal assistance from HVAC. The purpose of the study is to validate and develop a methodology for simulating convective heat transfer using high-resolution 3D steady \gls{RANS} CFD simulations. Through comparison and evaluation of different \gls{RANS} models and boundary layer modeling approaches, the researchers identify suitable methods to predict convective heat transfer coefficients (\gls{CHTC}) and flow fields. Validation against wind tunnel experiments on heated cubes in turbulent channel flow confirms the effectiveness of selected models and approaches. The study contributes to the advancement of simulation methodologies for sustainable building design but did not meet our objective of automating the heat transfer workflow to simplify it for the user. 
 
 
 
@@ -76,7 +76,7 @@ It uses computational fluid dynamics (CFD) simulation of convective heat transfe
     \end{tabular}
 \end{table}
 \enlargethispage{1cm}
-\todo{add citation to this table in the text!!! explain what it shows.}
+
 \end{landscape}
 
     
@@ -121,7 +121,7 @@ Conductive heat transfer can be calculated using the heat diffusion equation \ci
 	\end{equation}
 	
 	
-Here, $x,y,$ and $z$ are the Cartesian coordinates, $\alpha$ is the thermal diffusivity, $\dot{q}$ is the energy generation rate per unit volume, and \gls{Cp} is the specific heat capacity.
+Here, $x,y,$ and $z$ are the Cartesian coordinates, $\alpha$ is the thermal diffusivity, $\dot{q}$ is the energy generation rate per unit volume, and \glsfirst{cp} is the \glsentrylong{cp}.
  
 To calculate convective heat transfer, the formula used accounts for both advection (the movement of heat with the fluid flow) and diffusion (the spatial variation of temperature): 
 
