@@ -57,12 +57,12 @@ The development and validation of an integrated 3D heat transfer workflow to red
 
 ## Keywords
 
-[3D Heat Transfer  \and 
-OpenFOAM 2306\and 
-Conjugate Heat Transfer \and
-Thermal Bridging \and
-Rhinoceros \& Grasshopper   \and 
-Parametric Architecture]
+### 3D Heat Transfer 
+#### OpenFOAM 2306
+#### Conjugate Heat Transfer 
+#### Thermal Bridging 
+#### Rhinoceros & Grasshopper   
+#### Parametric Architecture
 
 ## Acknowledgments
 
