@@ -22,7 +22,6 @@ The outcomes of this thesis aim to empower architects to make informed decisions
 
 ## Repository Structure
 
-- `thesis.pdf`: The final version of the thesis in PDF format.
 - `Code/`: Directory containing the code, scripts, or notebooks used in the research.
 - `LaTeX/`: Directory containing all LaTeX source files to compile the thesis.
 - `README.md`: This file, providing an overview of the thesis and repository.
