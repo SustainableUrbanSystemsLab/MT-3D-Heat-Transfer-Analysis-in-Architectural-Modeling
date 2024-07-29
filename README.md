@@ -15,6 +15,11 @@ analysis. The integration of 3D thermal performance analysis into the architectu
 This thesis aims to address this gap by exploring the use of OpenFOAM to develop a
 user-friendly tool to simulate building-related heat transfer problems. The outcomes of this thesis aim to empower architects to make informed decisions about material selection, and their impact on energy efficiency, by seamlessly embedding it into the Rhino & Grasshopper CAD environment.
 
+## Presentation
+
+[Accompanying Conference Paper Presentation](https://www.youtube.com/watch?v=Wp8I9--Jn_8)
+
+
 ## Author
 
 - Name: Maryam Almaian
