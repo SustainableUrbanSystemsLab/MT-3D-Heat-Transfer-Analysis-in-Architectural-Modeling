@@ -1,0 +1,2 @@
+call _surfaceFeatureExtract_v2306.bat
+PAUSE
