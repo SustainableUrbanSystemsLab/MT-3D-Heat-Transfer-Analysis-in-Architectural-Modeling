@@ -54,3 +54,7 @@ user-friendly tool to simulate building-related heat transfer problems. The outc
 ## Contact
 
 For any questions or inquiries, please contact [Maryam Almaian](mailto:Malmaian3@gatech.edu).
+
+## Source
+
+[Link](https://github.com/kastnerp/MT-3D-Heat-Transfer-Analysis-in-Architectural-Modeling) to this repository.
