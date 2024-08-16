@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/ConcreteTop/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+6
+(
+    maxX
+    {
+        type            patch;
+        nFaces          237;
+        startFace       61084;
+    }
+    geom
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          1026;
+        startFace       61321;
+    }
+    ConcreteTop_to_Slab
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          804;
+        startFace       62347;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Slab;
+        samplePatch     Slab_to_ConcreteTop;
+    }
+    ConcreteTop_to_IntairTop
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          3640;
+        startFace       63151;
+        sampleMode      nearestPatchFace;
+        sampleRegion    IntairTop;
+        samplePatch     IntairTop_to_ConcreteTop;
+    }
+    ConcreteTop_to_Plaster
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          208;
+        startFace       66791;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Plaster;
+        samplePatch     Plaster_to_ConcreteTop;
+    }
+    ConcreteTop_to_Insulation
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          4403;
+        startFace       66999;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Insulation;
+        samplePatch     Insulation_to_ConcreteTop;
+    }
+)
+
+// ************************************************************************* //

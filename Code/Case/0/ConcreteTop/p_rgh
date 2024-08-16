@@ -1,0 +1,107 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       volScalarField;
+    location    "0/";
+    object      p_rgh;
+}
+
+dimensions [1 -1 -2 0 0 0 0];
+internalField uniform 100000;
+boundaryField
+{
+minX
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+maxX
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+minY
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+maxY
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+minZ
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+maxZ
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+IntairBottom
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+IntairTop
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+ExtAirBottom
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+ExtAirTop
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+Slab
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+ConcreteTop
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+Insulation
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+Brick
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+ConcreteBottom
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+Plaster
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+".*"
+{
+	 type fixedFluxPressure;
+	 value uniform 100000;
+}
+}

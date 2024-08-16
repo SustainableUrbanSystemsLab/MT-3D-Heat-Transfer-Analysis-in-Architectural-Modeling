@@ -1,0 +1,116 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/Slab/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+10
+(
+    maxX
+    {
+        type            patch;
+        nFaces          426;
+        startFace       95654;
+    }
+    geom
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          906;
+        startFace       96080;
+    }
+    Slab_to_ExtAirBottom
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          1925;
+        startFace       96986;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ExtAirBottom;
+        samplePatch     ExtAirBottom_to_Slab;
+    }
+    Slab_to_Plaster
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          2604;
+        startFace       98911;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Plaster;
+        samplePatch     Plaster_to_Slab;
+    }
+    Slab_to_ConcreteTop
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          804;
+        startFace       101515;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ConcreteTop;
+        samplePatch     ConcreteTop_to_Slab;
+    }
+    Slab_to_Brick
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          592;
+        startFace       102319;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Brick;
+        samplePatch     Brick_to_Slab;
+    }
+    Slab_to_IntairBottom
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          2604;
+        startFace       102911;
+        sampleMode      nearestPatchFace;
+        sampleRegion    IntairBottom;
+        samplePatch     IntairBottom_to_Slab;
+    }
+    Slab_to_ConcreteBottom
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          804;
+        startFace       105515;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ConcreteBottom;
+        samplePatch     ConcreteBottom_to_Slab;
+    }
+    Slab_to_Insulation
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          732;
+        startFace       106319;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Insulation;
+        samplePatch     Insulation_to_Slab;
+    }
+    Slab_to_ExtAirTop
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          1775;
+        startFace       107051;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ExtAirTop;
+        samplePatch     ExtAirTop_to_Slab;
+    }
+)
+
+// ************************************************************************* //

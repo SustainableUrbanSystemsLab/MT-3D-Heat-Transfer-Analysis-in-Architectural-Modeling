@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/Brick/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+6
+(
+    maxX
+    {
+        type            patch;
+        nFaces          366;
+        startFace       116252;
+    }
+    geom
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          5948;
+        startFace       116618;
+    }
+    Brick_to_ExtAirBottom
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          3014;
+        startFace       122566;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ExtAirBottom;
+        samplePatch     ExtAirBottom_to_Brick;
+    }
+    Brick_to_Slab
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          592;
+        startFace       125580;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Slab;
+        samplePatch     Slab_to_Brick;
+    }
+    Brick_to_Insulation
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          9574;
+        startFace       126172;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Insulation;
+        samplePatch     Insulation_to_Brick;
+    }
+    Brick_to_ExtAirTop
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          2960;
+        startFace       135746;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ExtAirTop;
+        samplePatch     ExtAirTop_to_Brick;
+    }
+)
+
+// ************************************************************************* //

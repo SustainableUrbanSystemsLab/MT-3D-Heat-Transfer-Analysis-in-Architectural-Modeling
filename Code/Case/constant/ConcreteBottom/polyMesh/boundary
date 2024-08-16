@@ -1,0 +1,66 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/ConcreteBottom/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+5
+(
+    maxX
+    {
+        type            patch;
+        nFaces          237;
+        startFace       61084;
+    }
+    geom
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          1026;
+        startFace       61321;
+    }
+    ConcreteBottom_to_Insulation
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          4403;
+        startFace       62347;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Insulation;
+        samplePatch     Insulation_to_ConcreteBottom;
+    }
+    ConcreteBottom_to_IntairBottom
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          3848;
+        startFace       66750;
+        sampleMode      nearestPatchFace;
+        sampleRegion    IntairBottom;
+        samplePatch     IntairBottom_to_ConcreteBottom;
+    }
+    ConcreteBottom_to_Slab
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          804;
+        startFace       70598;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Slab;
+        samplePatch     Slab_to_ConcreteBottom;
+    }
+)
+
+// ************************************************************************* //

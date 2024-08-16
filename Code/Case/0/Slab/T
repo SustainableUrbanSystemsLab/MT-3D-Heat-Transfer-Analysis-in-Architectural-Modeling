@@ -1,0 +1,966 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       volScalarField;
+    location    "0/";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 0 0 1 0 0 0 ];
+
+internalField   uniform 279;
+
+
+boundaryField
+{
+Brick_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 273;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_Brick
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_Insulation
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_ConcreteTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_ConcreteBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 275;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 275;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_Slab
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_Plaster
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 275;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_ExtAirTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 275;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_ExtAirBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_IntairTop
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Brick_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Insulation_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteTop_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ConcreteBottom_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Slab_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+Plaster_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirTop_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+ExtAirBottom_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairTop_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+IntairBottom_to_IntairBottom
+{
+            type          compressible::turbulentTemperatureRadCoupledMixed;
+            value  uniform 289;
+            Tnbr T;
+            K solidThermo;
+            kappaMethod solidThermo;
+            
+}
+geom
+{
+      type zeroGradient;
+      value uniform 285.15;
+}
+air
+{
+      type zeroGradient;
+      value uniform 285.15;
+}
+minX
+{
+            type fixedValue;
+            value uniform 273;
+}
+maxX
+{
+            type fixedValue;
+            value uniform 293;
+}
+minY
+{
+           type zeroGradient;
+            value uniform 286;
+}
+maxY
+{
+            type fixedValue;
+            value uniform 270;
+}
+minZ
+{
+            type fixedValue;
+            value uniform 293;
+}
+maxZ
+{
+            type zeroGradient;
+            value uniform 273;
+}
+}

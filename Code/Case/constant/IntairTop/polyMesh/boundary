@@ -1,0 +1,63 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/IntairTop/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+5
+(
+    maxX
+    {
+        type            patch;
+        nFaces          685;
+        startFace       77720;
+    }
+    geom
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          42;
+        startFace       78405;
+    }
+    air
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          4032;
+        startFace       78447;
+    }
+    IntairTop_to_Plaster
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          2604;
+        startFace       82479;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Plaster;
+        samplePatch     Plaster_to_IntairTop;
+    }
+    IntairTop_to_ConcreteTop
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          3640;
+        startFace       85083;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ConcreteTop;
+        samplePatch     ConcreteTop_to_IntairTop;
+    }
+)
+
+// ************************************************************************* //

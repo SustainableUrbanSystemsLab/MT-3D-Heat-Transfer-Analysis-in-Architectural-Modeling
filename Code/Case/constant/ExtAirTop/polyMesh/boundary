@@ -1,0 +1,67 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/ExtAirTop/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+5
+(
+    geom
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          6245;
+        startFace       88885;
+    }
+    air
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          565;
+        startFace       95130;
+    }
+    ExtAirTop_to_ExtAirBottom
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          225;
+        startFace       95695;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ExtAirBottom;
+        samplePatch     ExtAirBottom_to_ExtAirTop;
+    }
+    ExtAirTop_to_Brick
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          2960;
+        startFace       95920;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Brick;
+        samplePatch     Brick_to_ExtAirTop;
+    }
+    ExtAirTop_to_Slab
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          1775;
+        startFace       98880;
+        sampleMode      nearestPatchFace;
+        sampleRegion    Slab;
+        samplePatch     Slab_to_ExtAirTop;
+    }
+)
+
+// ************************************************************************* //

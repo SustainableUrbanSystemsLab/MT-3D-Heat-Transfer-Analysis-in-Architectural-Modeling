@@ -1,0 +1,56 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    arch        "LSB;label=32;scalar=64";
+    class       volScalarField;
+    location    "0/Brick";
+    object      cellToRegion;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 0 0 0 0];
+
+internalField   uniform 1;
+
+boundaryField
+{
+    maxX
+    {
+        type            zeroGradient;
+    }
+    geom
+    {
+        type            zeroGradient;
+    }
+    Brick_to_ExtAirBottom
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    Brick_to_Slab
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    Brick_to_Insulation
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    Brick_to_ExtAirTop
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //

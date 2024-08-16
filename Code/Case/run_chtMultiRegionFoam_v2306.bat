@@ -1,0 +1,2 @@
+call _chtMultiRegionFoam_v2306.bat
+PAUSE
