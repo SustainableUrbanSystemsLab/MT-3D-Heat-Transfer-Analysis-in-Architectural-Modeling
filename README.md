@@ -17,9 +17,8 @@ This thesis aims to address this gap by exploring the use of OpenFOAM to develop
 
 ## Author
 
-- Name: Maryam Almaian
-- Email: Malmaian3@gatech.edu
-- LinkedIn: https://www.linkedin.com/in/maryam-almaian/
+- Name: [Maryam Almaian](mailto:Malmaian3@gatech.edu)
+- LinkedIn: [Link](https://www.linkedin.com/in/maryam-almaian/)
 - Institution: Georgia Institute of Technology
 - Program: M.S. ARCH (High Performance Buildings)
 - Supervisor: Dr. Patrick Kastner
@@ -45,10 +44,6 @@ This thesis aims to address this gap by exploring the use of OpenFOAM to develop
   type = {MS Thesis}
 }
 ```
-
-## Contact
-
-For any questions or inquiries, please contact [Maryam Almaian](mailto:Malmaian3@gatech.edu).
 
 ## Source
 
