@@ -21,7 +21,7 @@ This thesis aims to address this gap by exploring the use of OpenFOAM to develop
 - LinkedIn: [Link](https://www.linkedin.com/in/maryam-almaian/)
 - Institution: Georgia Institute of Technology
 - Program: M.S. ARCH (High Performance Buildings)
-- Supervisor: Dr. Patrick Kastner
+- Advisor: Dr. Patrick Kastner
 
 ## Repository Structure
 
