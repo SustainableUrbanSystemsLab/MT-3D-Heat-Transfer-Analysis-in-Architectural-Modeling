@@ -44,7 +44,3 @@ This thesis aims to address this gap by exploring the use of OpenFOAM to develop
   type = {MS Thesis}
 }
 ```
-
-## Source
-
-[Link](https://github.com/kastnerp/MT-3D-Heat-Transfer-Analysis-in-Architectural-Modeling) to this repository.
