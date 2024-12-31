@@ -1,6 +1,6 @@
 # 3D Heat Transfer Analysis in Architectural Modeling: A Case Study with OpenFOAM
 
-<img src="https://raw.githubusercontent.com/kastnerp/MT-3D-Heat-Transfer-Analysis-in-Architectural-Modeling/main/LaTeX/Figures/newvalleg.png" width="500px">
+<img src="https://raw.githubusercontent.com/SustainableUrbanSystemsLab/MT-3D-Heat-Transfer-Analysis-in-Architectural-Modeling/main/LaTeX/Figures/newvalleg.png" width="500px">
 
 ## Abstract
 
